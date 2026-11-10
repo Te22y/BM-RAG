@@ -26,12 +26,13 @@ flowchart LR
     J -->|pass| O[Position + melting<br/>temperature + evidence]
     J -->|retry with hint,<br/>at most twice| R
     KG[(Case and rule<br/>vector stores)] --> R
+    KG -->|rule ids| J
     N[(Neo4j<br/>knowledge graph)] --> R
-    N --> J
+    N -->|case ids and their<br/>favored positions| J
     P[(Paper summaries<br/>with LLM rerank)] --> R
 ```
 
-The knowledge graph holds 170 cases and 58 rules extracted from 22 papers. The Reasoner runs every retrieval stage in a fixed order, cheapest first, and then makes one LLM call over the collected evidence; paper search only runs when the graph has too few cases with a known optimum. See [docs/architecture.md](docs/architecture.md) for every stage, trigger and setting.
+The knowledge graph holds 170 cases and 58 rules extracted from 22 papers. The Judge reads the stores too: it looks up cited cases in Neo4j, to check that they exist and that the position each favors does not contradict the recommendation, and cited rules in the rule store. It recognizes cases and rules by the start of their ids (`case...`, `rule...`), so other ids are not checked; data built with the default build profile uses such ids. The Reasoner runs every retrieval stage in a fixed order, cheapest first, and then makes one LLM call over the collected evidence; paper search only runs when the graph has too few cases with a known optimum. See [docs/architecture.md](docs/architecture.md) for every stage, trigger and setting.
 
 ## Repository layout
 

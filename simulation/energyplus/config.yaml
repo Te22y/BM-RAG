@@ -1,0 +1,111 @@
+energyplus:
+  exe_path: "C:/EnergyPlusV22-1-0/energyplus.exe"
+  idd_path: "C:/EnergyPlusV22-1-0/Energy+.idd"
+  version: "22.1"
+
+target_constructions:
+  - nonres_ext_wall_grd
+
+pcm:
+  thickness: 0.020
+  conductivity: 0.20
+  density: 850
+  specific_heat: 2000
+  latent_heat: 200000
+  band_width: 4
+  melt_temps: [12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+  thermal_absorptance: 0.9
+  solar_absorptance: 0.7
+  visible_absorptance: 0.7
+  num_curve_points: 16
+  # Position semantics (v4):
+  #   0 = outside stucco            (insert before layer 0)
+  #   1 = stucco / gypsum           (insert before layer 1)
+  #   2 = gypsum / insulation       (insert before layer 2)
+  #   3 = MIDDLE of insulation      (split NoMass insulation R/2, PCM at centre) -- NEW
+  #   4 = insulation / inner gypsum (insert before layer 3, = old pos3)
+  # NOTE: old pos4 (inside gypsum, room-facing) removed due to health concerns.
+  insert_positions: [0, 1, 2, 3, 4]
+
+# Method B: phase-stable material (PSM) twin cases for latent-heat isolation.
+# Each PSM case shares (pos, Tm) of a PCM case but lacks latent heat
+# (same k, rho, cp, thickness; no MaterialProperty:PhaseChange object).
+# Generated as cross-product over the subset below for every (zone, city).
+psm:
+  enabled: true
+  positions: [2]                  # middle-of-wall, most representative
+  melt_temps: [16, 20, 24, 28]    # 4 reps per city -> 72 PSM cases total
+
+simulation:
+  timestep: 60
+  heat_balance_algorithm: "ConductionFiniteDifference"
+  cond_fd:
+    difference_scheme: "FullyImplicitFirstOrder"
+    space_discretization_constant: 3.0
+    relaxation_factor: 1.0
+    inside_face_surface_temperature_convergence_criteria: 0.002
+
+output:
+  variables:
+    - "Zone Air System Sensible Heating Energy"
+    - "Zone Air System Sensible Cooling Energy"
+    - "Zone Operative Temperature"
+    - "Zone Thermal Comfort ASHRAE 55 Adaptive Model 90% Acceptability Status"
+    - "Surface Inside Face Temperature"
+    - "Surface Outside Face Temperature"
+  meters:
+    - "Heating:EnergyTransfer"
+    - "Cooling:EnergyTransfer"
+  reporting_frequency: "Hourly"
+
+execution:
+  num_workers: 8
+  per_case_timeout_sec: 1200
+  retry_on_fail: 1
+
+epw_root: "inputs/epw"
+
+# Each zone uses the IDF of the ASHRAE representative city of its PNNL climate zone as a template
+# EPW files are downloaded beforehand to anywhere under inputs/epw/; found by a recursive search for epw_filename
+climate_zones:
+  tropical:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_Miami.idf"
+    cities:
+      - { name: miami,     epw_filename: "USA_FL_Miami.Intl.AP.722020_TMY3.epw" }
+      - { name: singapore, epw_filename: "SGP_Singapore.486980_IWEC.epw" }
+      - { name: bangkok,   epw_filename: "THA_Bangkok.484560_IWEC.epw" }
+
+  dry:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_Tucson.idf"
+    cities:
+      - { name: phoenix,     epw_filename: "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw" }
+      - { name: albuquerque, epw_filename: "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw" }
+      - { name: turpan,      epw_filename: "CHN_Xinjiang.Uygur.Turpan.515730_CSWD.epw" }
+
+  mediterranean:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_SanDiego.idf"
+    cities:
+      - { name: sandiego,      epw_filename: "USA_CA_San.Diego-Montgomery.Field.722903_TMY3.epw" }
+      - { name: sanfrancisco,  epw_filename: "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw" }
+      - { name: athens,        epw_filename: "GRC_Athens.167160_IWEC.epw" }
+
+  subtropical:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_Atlanta.idf"
+    cities:
+      - { name: atlanta,  epw_filename: "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw" }
+      - { name: tokyo,    epw_filename: "JPN_Tokyo.Hyakuri.477150_IWEC.epw" }
+      - { name: shanghai, epw_filename: "CHN_Shanghai.Shanghai.583670_IWEC.epw" }
+
+  continental:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_NewYork.idf"
+    cities:
+      - { name: newyork, epw_filename: "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw" }
+      - { name: chicago, epw_filename: "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw" }
+      - { name: beijing, epw_filename: "CHN_Beijing.Beijing.545110_IWEC.epw" }
+
+  oceanic:
+    template_idf: "ASHRAE901_OfficeSmall/ASHRAE901_OfficeSmall_STD2022_Seattle.idf"
+    cities:
+      - { name: seattle,   epw_filename: "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw" }
+      - { name: vancouver, epw_filename: "CAN_BC_Vancouver.718920_CWEC.epw" }
+      - { name: london,    epw_filename: "GBR_London.Gatwick.037760_IWEC.epw" }

@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=77"]   # first version that reads the SPDX license fields below
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bmrag"
+version = "0.1.0"
+description = "Multi-agent hybrid RAG for phase change material placement in building walls"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+# Exact versions of the verified environment: requirements-agents.lock.txt
+dependencies = [
+    "python-dotenv",
+    "langchain-core",
+    "langchain-openai",
+    "langchain-chroma",
+    "langchain-classic",
+    "neo4j",
+]
+
+[project.optional-dependencies]
+anthropic = ["langchain-anthropic"]
+google = ["langchain-google-genai"]
+huggingface = ["langchain-huggingface"]
+# Build pipeline (python -m bmrag.build); verified versions: requirements-build.lock.txt.
+# The paper index also needs Poppler and Tesseract on PATH.
+indexing = ["unstructured[pdf]", "torch"]
+knowledge-graph = ["pymupdf", "pdfplumber"]
+dev = ["ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"bmrag.prompts" = ["*.txt"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+# pycodestyle, pyflakes, import order, bugbear, pyupgrade, simplify
+select = ["E", "W", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt text: its lines are sent to the model as they are.
+"src/bmrag/build/graph/extraction_prompt.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["bmrag", "tests"]

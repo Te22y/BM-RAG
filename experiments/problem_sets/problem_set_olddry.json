@@ -1,0 +1,1376 @@
+[
+  {
+    "city": "beijing",
+    "zone": "continental",
+    "epw_filename": "CHN_Beijing.Beijing.545110_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "beijing",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 8450.0,
+      "gt_savings_pct": 2.5624599615630848,
+      "tied_tm_set": [
+        18.0
+      ]
+    }
+  },
+  {
+    "city": "chicago",
+    "zone": "continental",
+    "epw_filename": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "chicago",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 16.0,
+      "gt_total_kWh": 10866.666666666668,
+      "gt_savings_pct": 2.4438902743142017,
+      "tied_tm_set": [
+        16.0
+      ]
+    }
+  },
+  {
+    "city": "newyork",
+    "zone": "continental",
+    "epw_filename": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "newyork",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 7391.666666666666,
+      "gt_savings_pct": 2.2409992652461415,
+      "tied_tm_set": [
+        18.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "phoenix",
+    "zone": "dry",
+    "epw_filename": "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "phoenix",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 9986.11111111111,
+      "gt_savings_pct": 3.6451353524524226,
+      "tied_tm_set": [
+        26.0,
+        28.0
+      ]
+    }
+  },
+  {
+    "city": "cairo",
+    "zone": "dry",
+    "epw_filename": "EGY_Cairo.623660_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "cairo",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 3,
+      "gt_tm": 30.0,
+      "gt_total_kWh": 8091.666666666667,
+      "gt_savings_pct": 2.412060301507527,
+      "tied_tm_set": [
+        30.0
+      ]
+    }
+  },
+  {
+    "city": "riyadh",
+    "zone": "dry",
+    "epw_filename": "SAU_Riyadh.404380_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "riyadh",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 28.0,
+      "gt_total_kWh": 11252.777777777777,
+      "gt_savings_pct": 3.547619047619046,
+      "tied_tm_set": [
+        28.0
+      ]
+    }
+  },
+  {
+    "city": "athens",
+    "zone": "mediterranean",
+    "epw_filename": "GRC_Athens.167160_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "athens",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 4944.444444444444,
+      "gt_savings_pct": 4.198062432723347,
+      "tied_tm_set": [
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "sandiego",
+    "zone": "mediterranean",
+    "epw_filename": "USA_CA_San.Diego-Montgomery.Field.722903_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "sandiego",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 24.0,
+      "gt_total_kWh": 3544.4444444444443,
+      "gt_savings_pct": 5.551443375277577,
+      "tied_tm_set": [
+        24.0
+      ]
+    }
+  },
+  {
+    "city": "sanfrancisco",
+    "zone": "mediterranean",
+    "epw_filename": "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "sanfrancisco",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 1891.6666666666665,
+      "gt_savings_pct": 9.320905459387479,
+      "tied_tm_set": [
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "london",
+    "zone": "oceanic",
+    "epw_filename": "GBR_London.Gatwick.037760_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "london",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 4391.666666666666,
+      "gt_savings_pct": 3.0656039239730384,
+      "tied_tm_set": [
+        18.0
+      ]
+    }
+  },
+  {
+    "city": "seattle",
+    "zone": "oceanic",
+    "epw_filename": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "seattle",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 3808.333333333333,
+      "gt_savings_pct": 3.04101838755305,
+      "tied_tm_set": [
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "vancouver",
+    "zone": "oceanic",
+    "epw_filename": "CAN_BC_Vancouver.718920_CWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "vancouver",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 5002.777777777777,
+      "gt_savings_pct": 2.278893109061319,
+      "tied_tm_set": [
+        18.0
+      ]
+    }
+  },
+  {
+    "city": "atlanta",
+    "zone": "subtropical",
+    "epw_filename": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "atlanta",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 6980.555555555556,
+      "gt_savings_pct": 4.339550818424062,
+      "tied_tm_set": [
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "shanghai",
+    "zone": "subtropical",
+    "epw_filename": "CHN_Shanghai.Shanghai.583670_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "shanghai",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 7716.666666666667,
+      "gt_savings_pct": 2.4578651685393247,
+      "tied_tm_set": [
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "tokyo",
+    "zone": "subtropical",
+    "epw_filename": "JPN_Tokyo.Hyakuri.477150_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "tokyo",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 7272.222222222222,
+      "gt_savings_pct": 4.207830223197962,
+      "tied_tm_set": [
+        18.0
+      ]
+    }
+  },
+  {
+    "city": "bangkok",
+    "zone": "tropical",
+    "epw_filename": "THA_Bangkok.484560_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "bangkok",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 3,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 15708.333333333332,
+      "gt_savings_pct": 1.8740239458615418,
+      "tied_tm_set": [
+        26.0
+      ]
+    }
+  },
+  {
+    "city": "miami",
+    "zone": "tropical",
+    "epw_filename": "USA_FL_Miami.Intl.AP.722020_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "miami",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 3,
+      "gt_tm": 12.0,
+      "gt_total_kWh": 11680.555555555555,
+      "gt_savings_pct": 1.4530114834778567,
+      "tied_tm_set": [
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "city": "singapore",
+    "zone": "tropical",
+    "epw_filename": "SGP_Singapore.486980_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "singapore",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "gt_pos": 3,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 15063.888888888887,
+      "gt_savings_pct": 1.435841512177407,
+      "tied_tm_set": [
+        26.0
+      ]
+    }
+  }
+]

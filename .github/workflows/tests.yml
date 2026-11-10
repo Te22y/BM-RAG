@@ -1,0 +1,25 @@
+# Runs the offline test suite: no API key, data or database is needed.
+# Windows, because requirements-agents.lock.txt was resolved and verified there.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: |
+          uv venv .venv --python 3.12
+          uv pip install --python .venv -r requirements-agents.lock.txt
+          uv pip install --python .venv --no-deps -e .
+          uv pip install --python .venv ruff==0.17.2
+      - name: Test
+        run: .venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -t .

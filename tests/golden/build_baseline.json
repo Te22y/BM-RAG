@@ -1,0 +1,74 @@
+{
+ "chroma": {
+  "kg_index/chroma_db/pcm_kg_cases_v1": "7def038fbb303405974c5ab7cfaae3c70b9a2884ebcfa70ee7831777975f1d54",
+  "kg_index/chroma_db/pcm_kg_rules_v1": "e9208d6a1014635a6b5397a48986b8e2f83c03b0c6fa90d8d1f177fa8a4e5310",
+  "paper_index/chroma_db/multi_modal_rag": "392ab4a4c9379a1cded9bdd50334b2b01e84383eef866e90c2bb574212c625f8"
+ },
+ "files": {
+  "kg_canonical/ALL_papers_structured_standardized.cypher": "5194b2f7e51d8c3206877d66c9887ad595d6cc7cc09e8794319b10fe83388bc0",
+  "kg_canonical/ALL_papers_structured_standardized.json": "3263c6fb813267f18eba96840871461433eaa62256020e2907753534f167cc66",
+  "kg_canonical/canonical_alignment_report.json": "2963e349812b5e00edca1875fdcc21127cf6b62662cddd0d5c3881a4596cfcdb",
+  "kg_canonical/canonical_map.json": "042d8b284d4409200b7fab6b2e9190fd721789c6ad9937ef9a3e6dce56bdfb33",
+  "kg_canonical/step6_validation_report.json": "3f927cd7827db524c0f07432a4dd4cf25035c47bc8df167c8221e8aadd925ec9",
+  "kg_canonical/step7_dry_run_report.json": "d5dedc35c50f19839f14f3722d024c1b10d40a830491a75d112a3fe605efabf6",
+  "kg_canonical_llm/ALL_papers_structured_standardized.cypher": "5194b2f7e51d8c3206877d66c9887ad595d6cc7cc09e8794319b10fe83388bc0",
+  "kg_canonical_llm/ALL_papers_structured_standardized.json": "3263c6fb813267f18eba96840871461433eaa62256020e2907753534f167cc66",
+  "kg_canonical_llm/canonical_alignment_report.json": "a5012b8c6dae2469bebe42306011a5656325387b608b135ce9aaa4cd26d18324",
+  "kg_canonical_llm/canonical_map.json": "042d8b284d4409200b7fab6b2e9190fd721789c6ad9937ef9a3e6dce56bdfb33",
+  "kg_canonical_llm/step6_validation_report.json": "b43e58025e92457e27c6c592c6ac72ff42e664b97fd48b2842fcfac889ee1945",
+  "kg_cases/ALL_cases.json": "c06a9baf505b742353d680c536a42acbdd9bd74319187ef4f3e3b7927a2ba55a",
+  "kg_cases/ALL_papers.json": "5f3dd3c5d11a6121f56cbdc21245e83c8550cb99826930884280c2995313ac4a",
+  "kg_cases/Synthetic_study_of_a_PCM_layer_in_a_masonry_wall.json": "7106c690567df82226917bb6815311834b20ee5aaa293eada71dd37a05d002d2",
+  "kg_cypher/ALL_papers_structured_kg.json": "a64bb6eef25b271889e0184e4ad4997d65ea5ff1cf8a4c90f33163defca08e12",
+  "kg_entities/ALL_papers_structured.json": "e5bf109f92f89072df2d2c0040b9fd7d73dd34f7f83b9dc015afe51dcbf67c39",
+  "kg_index/case_store.json": "8c9885922ee8cff9b0e5b3398a7a7de659dfb830c1bfce34fb97f41b3e0454ac",
+  "kg_index/rule_store.json": "2dfcb17572424706059f882d69554833441f877e31b86f3e9d5ba79c3c67ad6a",
+  "paper_chunks/6b430091b4ef0770e2cea1e0045b7de3.pkl": "a199cab0baa8a3a11708fc21ec9eaec2213e0cc625cc797dd863a86ab963fa89",
+  "paper_chunks_cleaned/6b430091b4ef0770e2cea1e0045b7de3.pkl": "f8c279e7d8a4d90f6b503885ba2ffbcffa524caff0679532273bcaf4e1fb7938",
+  "paper_index/docstore/6b430091b4ef0770e2cea1e0045b7de3__image__0000": "bbb7f08ee99e84d010e636111aa0f3f35d1b6be1aa9a13d6b7a36c5b0c7b0098",
+  "paper_index/docstore/6b430091b4ef0770e2cea1e0045b7de3__table__0000": "50a053df3e681b229fc6b70424ed74a0bb6ef42173c81dd3523f5c64674aacd4",
+  "paper_index/docstore/6b430091b4ef0770e2cea1e0045b7de3__text__0000": "86d0542ac13146314d463eb3e1c692369ed2e537d370254dd389f09110414f07",
+  "paper_index/images/6b430091b4ef0770e2cea1e0045b7de3__image__0000.pkl": "0642b8b6d71b783def1ff0be707a71bef55bb1dfdcca82907c07091e1ece7636",
+  "paper_index/manifest.json": "4ed6f85e9843525da854e332d2e4f114e184deec1fbc445d8c6d08cab2c0e523",
+  "paper_index/summaries/6b430091b4ef0770e2cea1e0045b7de3__image__0000.txt": "a0baa8f060245393a4752ea9510c189f9b80fb53c79fdb7d7049f9aca7b1f493",
+  "paper_index/summaries/6b430091b4ef0770e2cea1e0045b7de3__table__0000.txt": "ff9d75225949f88f01dc0ea6b96f6fb843c0def6d8349508bcc1e29ac7489140",
+  "paper_index/summaries/6b430091b4ef0770e2cea1e0045b7de3__text__0000.txt": "07f577b3892641103b9b431f7096efeff43ec65c08a4df98dfec05f5d50fa3c6",
+  "paper_index/tables/6b430091b4ef0770e2cea1e0045b7de3__table__0000.pkl": "8e983648e8fc22b0aa223e14fcaf6b711f42e8d2633119ea69b7880186d8570a",
+  "paper_index/texts/6b430091b4ef0770e2cea1e0045b7de3__text__0000.pkl": "5167dfe0d666c4b8f230376ee93efafddc9762911559192035b613dd13b5628d"
+ },
+ "inputs": {
+  "Synthetic study of a PCM layer in a masonry wall.pdf": "0f4efb2efeeb160ccb741423df4acf56f751dbd0f8882092722a2ffe18310763"
+ },
+ "quality": {
+  "issue_code_counts": {
+   "critical_relation_without_direct_evidence": 8,
+   "duplicate_entity_id": 1,
+   "mechanism_cause_not_in_entities": 6,
+   "mechanism_effect_not_in_entities": 6
+  },
+  "issue_counts": {
+   "error": 0,
+   "info": 20,
+   "warning": 1
+  },
+  "record_count": 3
+ },
+ "requests": {
+  "A4_summarize": [
+   "chat:gpt-5-mini:315748a0611a4bd8536e5ff2e9dd83b6fe9d496106ac8ae2deee4789bb8319b2",
+   "chat:gpt-5-mini:319bbfa576b9b8e386a392ea5ca5542fb1d490e2679ff5b14b42ac3f1cbc3a83",
+   "chat:gpt-5-mini:b64bb5f14291e34c24c9e2d2a080864b2a68b66a7a2657b9c8a5d1e70de2fc4d",
+   "embedding:text-embedding-3-small:8543ea006c4d40c5bfe7cad8a4b6b67c11fdb70cb3b24ba69d40c960e47da62b"
+  ],
+  "B0_extract": [
+   "chat:gpt-5-mini:f6f2bcd2786503b00e834b5a86cfbc2938c689bce0cbb0759f5e85d62782f5ed"
+  ],
+  "B6_standardize_llm": [
+   "chat:gpt-4o-mini:646f4e52e33c4bded5e85ef586025239bbdf15b09c33cfd7fdff629f307e5b3b"
+  ],
+  "B_kg_index": [
+   "embedding:text-embedding-3-small:35638a1c599f405e1f8d8baa5e2e41c912be1a1a618db7a2f2367d9a7238a387",
+   "embedding:text-embedding-3-small:c92b0e2a7783be08127103e532088688ef34d4bd531848d8d42244fd4ea5ad07"
+  ]
+ }
+}

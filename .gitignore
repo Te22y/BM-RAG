@@ -1,0 +1,60 @@
+# ── Secrets & personal tool config ─────────────────────
+.env
+.env.*
+!.env.example
+**/.claude/settings.local.json
+.claude/launch.json
+
+# ── Python / environments ──────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+.venv/
+.ruff_cache/
+venv/
+.ipynb_checkpoints/
+
+# ── IDE / OS ───────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Papers and everything derived from them ────────────
+# Papers, chunks, vector stores and KG records (see docs/build_pipeline.md)
+data/
+
+# ── Run records (kept locally) ─────────────────────────
+runs/
+*.log
+
+# ── Local only: archive and folders from before the refactor ──
+_archive/
+docs/paper_corrections.md
+01_PCM_paper/
+02codes/
+03_PCM_codes/
+BMRAG_DB/
+Results/
+pcmcode/
+pcm_case_summaries/
+
+# ── EnergyPlus: generated outputs & third-party inputs ──
+simulation/energyplus/generated_idfs/
+simulation/energyplus/logs/
+simulation/energyplus/inputs/epw/
+simulation/energyplus/inputs/
+simulation/energyplus/epw/
+simulation/energyplus/ASHRAE901_OfficeSmall/
+simulation/energyplus/results/
+simulation/energyplus/*_output.txt
+simulation/energyplus/find_props.txt
+simulation/energyplus/pcm_summary.txt
+simulation/energyplus/wall_compare.txt
+simulation/energyplus/PCM_EnergyPlus_Summary.md
+
+# ── Retrieval evaluation results ───────────────────────
+experiments/retrieval_eval/results*/
+experiments/retrieval_eval/report_*.md
+experiments/retrieval_eval/baseline_v1_snapshot.md

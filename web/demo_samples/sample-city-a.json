@@ -1,0 +1,335 @@
+{
+ "meta": {
+  "id": "sample-city-a",
+  "title": "Sample City A (synthetic)",
+  "zone": null,
+  "source": "synthetic",
+  "synthetic": true
+ },
+ "input": {
+  "climate": "Sample City A, an invented temperate climate",
+  "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 24°C, heating setpoint = 21°C; setback: cooling = 29°C, heating = 16°C.",
+  "wall_construction": "stucco 25 mm | gypsum 16 mm | insulation R=1.6 | gypsum 16 mm (interior)",
+  "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+  "goal": "minimize total annual energy",
+  "orientation": null,
+  "season": null,
+  "optimization_target": "min_total_energy"
+ },
+ "analyst": {
+  "climate_kw": "invented",
+  "objective_kw": "energy saving",
+  "materials": [
+   "stucco",
+   "gypsum",
+   "insulation"
+  ],
+  "composite_query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+  "notes": [
+   "Invented note: this run is a synthetic example."
+  ]
+ },
+ "attempts": [
+  {
+   "attempt": 1,
+   "pos": 4,
+   "tm": 20.0,
+   "position": "interior side of the insulation",
+   "confidence": 0.7,
+   "evidence_ids": [
+    "case_demo_0",
+    "rule_demo_0"
+   ],
+   "verdict": "pass",
+   "fatal_issues": [],
+   "soft_issues": []
+  }
+ ],
+ "final": {
+  "position": "interior side of the insulation",
+  "pcm_interface_pos": 4,
+  "pcm_tm_c": 20.0,
+  "tm_reasoning": [
+   "Invented reasoning: the interface temperature crosses 20.0 °C during a typical day."
+  ],
+  "joint_rationale": "Invented example, not a real result. The inner position couples to the room and still cycles daily.",
+  "confidence": 0.7,
+  "reasoning_chain": [
+   "Invented step: case_demo_0 has a similar wall, so its mechanism applies.",
+   "Invented step: rule_demo_0 points to the same coupling argument."
+  ],
+  "evidence_ids": [
+   "case_demo_0",
+   "rule_demo_0"
+  ],
+  "alternatives": [
+   {
+    "pcm_interface_pos": 2,
+    "pcm_tm_c": 28.0,
+    "evidence_ids": [],
+    "why_not_preferred": "Invented reason: insulation separates this position from the room."
+   }
+  ]
+ },
+ "verdict": "pass",
+ "elapsed_seconds": 92.7,
+ "events": [
+  {
+   "t": 0.1,
+   "kind": "agent_start",
+   "agent": "analyst",
+   "attempt": 0
+  },
+  {
+   "t": 20.1,
+   "kind": "llm",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 20.0,
+   "caller": "analyst",
+   "model": "gpt-5-mini",
+   "input_tokens": 889,
+   "output_tokens": 1800,
+   "cost_usd": 0.00382225
+  },
+  {
+   "t": 20.2,
+   "kind": "agent_end",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 20.1
+  },
+  {
+   "t": 20.3,
+   "kind": "agent_start",
+   "agent": "reasoner",
+   "attempt": 1
+  },
+  {
+   "t": 20.6,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases_with_fallback",
+   "n": 5,
+   "elapsed_sec": 0.3,
+   "fallback_used": false,
+   "query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+   "ids": [
+    "case_demo_0",
+    "case_demo_1",
+    "case_demo_2",
+    "case_demo_3",
+    "case_demo_4"
+   ]
+  },
+  {
+   "t": 20.9,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases",
+   "n": 2,
+   "elapsed_sec": 0.3,
+   "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+   "ids": [
+    "case_demo_6",
+    "case_demo_7"
+   ]
+  },
+  {
+   "t": 21.2,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM optimal position invented temperate climate",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2"
+   ]
+  },
+  {
+   "t": 21.5,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+   "ids": [
+    "rule_demo_3",
+    "rule_demo_4",
+    "rule_demo_5"
+   ]
+  },
+  {
+   "t": 21.8,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 2,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM placement wall layer energy reduction",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1"
+   ]
+  },
+  {
+   "t": 22.1,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "neo4j_template",
+   "template": "cases_by_climate",
+   "n": 0,
+   "elapsed_sec": 0.3
+  },
+  {
+   "t": 92.1,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 70.0,
+   "caller": "reasoner",
+   "model": "gpt-5",
+   "input_tokens": 4667,
+   "output_tokens": 7000,
+   "cost_usd": 0.07583375
+  },
+  {
+   "t": 92.2,
+   "kind": "agent_end",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 71.9,
+   "pos": 4,
+   "tm": 20.0,
+   "confidence": 0.7
+  },
+  {
+   "t": 92.3,
+   "kind": "agent_start",
+   "agent": "judge",
+   "attempt": 1
+  },
+  {
+   "t": 92.6,
+   "kind": "retrieval",
+   "agent": "judge",
+   "attempt": 1,
+   "fn": "judge.neo4j_template",
+   "template": "verify_case_evidence",
+   "n": 1,
+   "elapsed_sec": 0.3,
+   "ids": [
+    "case_demo_0"
+   ]
+  },
+  {
+   "t": 92.7,
+   "kind": "agent_end",
+   "agent": "judge",
+   "attempt": 1,
+   "elapsed_sec": 0.4,
+   "verdict": "pass",
+   "n_fatal": 0,
+   "n_soft": 0
+  }
+ ],
+ "usage": {
+  "by_caller": {
+   "analyst": {
+    "calls": 1,
+    "input_tokens": 889,
+    "cached_tokens": 0,
+    "output_tokens": 1800,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 20.0,
+    "cost_usd": 0.00382
+   },
+   "reasoner": {
+    "calls": 1,
+    "input_tokens": 4667,
+    "cached_tokens": 0,
+    "output_tokens": 7000,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 70.0,
+    "cost_usd": 0.07583
+   }
+  },
+  "by_model": {
+   "gpt-5-mini": {
+    "calls": 1,
+    "input_tokens": 889,
+    "cached_tokens": 0,
+    "output_tokens": 1800,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 20.0,
+    "cost_usd": 0.00382
+   },
+   "gpt-5": {
+    "calls": 1,
+    "input_tokens": 4667,
+    "cached_tokens": 0,
+    "output_tokens": 7000,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 70.0,
+    "cost_usd": 0.07583
+   }
+  },
+  "cost_usd_total": 0.07965
+ },
+ "score": {
+  "status": "ok",
+  "pos": 4,
+  "tm": 20.0,
+  "gt_pos": 4,
+  "gt_tm": 18.0,
+  "exact_pos_hit": true,
+  "near_pos_hit": true,
+  "tm_hit_2c": true,
+  "tm_hit_4c": true,
+  "joint_strict": true,
+  "joint_loose": true,
+  "capture_loss": 0.040000000000000036
+ },
+ "truth": {
+  "gt_pos": 4,
+  "gt_tm": 18.0,
+  "tied_tm_set": [
+   18.0
+  ],
+  "savings_pct": 3.0,
+  "baseline_kWh": 10000.0,
+  "optimum_kWh": 9700.0
+ },
+ "evidence": {
+  "case_demo_0": {
+   "type": "case",
+   "verified": true,
+   "paper": "Invented paper A",
+   "climate": "Invented climate",
+   "favored": [
+    "interior side"
+   ],
+   "relation": null,
+   "text": "Invented case 0: a simulated office wall where an inner PCM layer lowered annual load."
+  },
+  "rule_demo_0": {
+   "type": "rule",
+   "verified": true,
+   "paper": "Invented paper A",
+   "climate": null,
+   "favored": [],
+   "relation": "FAVORS",
+   "text": "Invented statement 0: PCM closer to the room couples better to it."
+  }
+ }
+}

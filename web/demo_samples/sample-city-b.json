@@ -1,0 +1,774 @@
+{
+ "meta": {
+  "id": "sample-city-b",
+  "title": "Sample City B (synthetic)",
+  "zone": null,
+  "source": "synthetic",
+  "synthetic": true
+ },
+ "input": {
+  "climate": "Sample City B, an invented temperate climate",
+  "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 24°C, heating setpoint = 21°C; setback: cooling = 29°C, heating = 16°C.",
+  "wall_construction": "stucco 25 mm | gypsum 16 mm | insulation R=1.6 | gypsum 16 mm (interior)",
+  "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+  "goal": "minimize total annual energy",
+  "orientation": null,
+  "season": null,
+  "optimization_target": "min_total_energy"
+ },
+ "analyst": {
+  "climate_kw": "invented",
+  "objective_kw": "energy saving",
+  "materials": [
+   "stucco",
+   "gypsum",
+   "insulation"
+  ],
+  "composite_query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+  "notes": [
+   "Invented note: this run is a synthetic example."
+  ]
+ },
+ "attempts": [
+  {
+   "attempt": 1,
+   "pos": 3,
+   "tm": 26.0,
+   "position": "midpoint of the insulation",
+   "confidence": 0.5,
+   "evidence_ids": [
+    "case_demo_1"
+   ],
+   "verdict": "retry",
+   "fatal_issues": [],
+   "soft_issues": [
+    "Cycling-feasibility (pos3): chosen Tm=26.0°C needs interface to cross both 24.0°C and 28.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+   ]
+  },
+  {
+   "attempt": 2,
+   "pos": 3,
+   "tm": 24.0,
+   "position": "midpoint of the insulation",
+   "confidence": 0.55,
+   "evidence_ids": [
+    "case_demo_1",
+    "rule_demo_1"
+   ],
+   "verdict": "retry",
+   "fatal_issues": [],
+   "soft_issues": [
+    "Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+   ]
+  },
+  {
+   "attempt": 3,
+   "pos": 3,
+   "tm": 24.0,
+   "position": "midpoint of the insulation",
+   "confidence": 0.55,
+   "evidence_ids": [
+    "case_demo_1",
+    "rule_demo_1",
+    "0123456789abcdef__text__0001"
+   ],
+   "verdict": "retry",
+   "fatal_issues": [],
+   "soft_issues": [
+    "Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+   ]
+  }
+ ],
+ "final": {
+  "position": "midpoint of the insulation",
+  "pcm_interface_pos": 3,
+  "pcm_tm_c": 24.0,
+  "tm_reasoning": [
+   "Invented reasoning: the interface temperature crosses 24.0 °C during a typical day."
+  ],
+  "joint_rationale": "Invented example, not a real result. The Judge's reminder is addressed, and the last attempt is accepted.",
+  "confidence": 0.55,
+  "reasoning_chain": [
+   "Invented step: case_demo_1 has a similar wall, so its mechanism applies.",
+   "Invented step: 0123456789abcdef__text__0001 points to the same coupling argument."
+  ],
+  "evidence_ids": [
+   "case_demo_1",
+   "rule_demo_1",
+   "0123456789abcdef__text__0001"
+  ],
+  "alternatives": [
+   {
+    "pcm_interface_pos": 2,
+    "pcm_tm_c": 28.0,
+    "evidence_ids": [],
+    "why_not_preferred": "Invented reason: insulation separates this position from the room."
+   }
+  ]
+ },
+ "verdict": "retry",
+ "elapsed_seconds": 244.6,
+ "events": [
+  {
+   "t": 0.1,
+   "kind": "agent_start",
+   "agent": "analyst",
+   "attempt": 0
+  },
+  {
+   "t": 20.1,
+   "kind": "llm",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 20.0,
+   "caller": "analyst",
+   "model": "gpt-5-mini",
+   "input_tokens": 889,
+   "output_tokens": 1800,
+   "cost_usd": 0.00382225
+  },
+  {
+   "t": 20.2,
+   "kind": "agent_end",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 20.1
+  },
+  {
+   "t": 20.3,
+   "kind": "agent_start",
+   "agent": "reasoner",
+   "attempt": 1
+  },
+  {
+   "t": 20.6,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases_with_fallback",
+   "n": 5,
+   "elapsed_sec": 0.3,
+   "fallback_used": false,
+   "query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+   "ids": [
+    "case_demo_0",
+    "case_demo_1",
+    "case_demo_2",
+    "case_demo_3",
+    "case_demo_4"
+   ]
+  },
+  {
+   "t": 20.9,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases",
+   "n": 2,
+   "elapsed_sec": 0.3,
+   "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+   "ids": [
+    "case_demo_6",
+    "case_demo_7"
+   ]
+  },
+  {
+   "t": 21.2,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM optimal position invented temperate climate",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2"
+   ]
+  },
+  {
+   "t": 21.5,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+   "ids": [
+    "rule_demo_3",
+    "rule_demo_4",
+    "rule_demo_5"
+   ]
+  },
+  {
+   "t": 21.8,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 2,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM placement wall layer energy reduction",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1"
+   ]
+  },
+  {
+   "t": 22.1,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "neo4j_template",
+   "template": "cases_by_climate",
+   "n": 0,
+   "elapsed_sec": 0.3
+  },
+  {
+   "t": 24.1,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 2.0,
+   "caller": "paper_rerank",
+   "model": "gpt-5.2",
+   "input_tokens": 515,
+   "output_tokens": 100,
+   "cost_usd": 0.00230125
+  },
+  {
+   "t": 24.4,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_paper_chunks",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "organic PCM latent heat 200 kJ/kg thickness 20 mm",
+   "ids": [
+    "0123456789abcdef__text__0001",
+    "0123456789abcdef__text__0002",
+    "0123456789abcdef__text__0003"
+   ]
+  },
+  {
+   "t": 94.4,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 70.0,
+   "caller": "reasoner",
+   "model": "gpt-5",
+   "input_tokens": 4844,
+   "output_tokens": 7000,
+   "cost_usd": 0.076055
+  },
+  {
+   "t": 94.5,
+   "kind": "agent_end",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 74.2,
+   "pos": 3,
+   "tm": 26.0,
+   "confidence": 0.5
+  },
+  {
+   "t": 94.6,
+   "kind": "agent_start",
+   "agent": "judge",
+   "attempt": 1
+  },
+  {
+   "t": 94.9,
+   "kind": "retrieval",
+   "agent": "judge",
+   "attempt": 1,
+   "fn": "judge.neo4j_template",
+   "template": "verify_case_evidence",
+   "n": 1,
+   "elapsed_sec": 0.3,
+   "ids": [
+    "case_demo_1"
+   ]
+  },
+  {
+   "t": 95.0,
+   "kind": "agent_end",
+   "agent": "judge",
+   "attempt": 1,
+   "elapsed_sec": 0.4,
+   "verdict": "retry",
+   "n_fatal": 0,
+   "n_soft": 1
+  },
+  {
+   "t": 95.1,
+   "kind": "agent_start",
+   "agent": "reasoner",
+   "attempt": 2
+  },
+  {
+   "t": 95.4,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_cases_with_fallback",
+   "n": 6,
+   "elapsed_sec": 0.3,
+   "fallback_used": false,
+   "query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+   "ids": [
+    "case_demo_0",
+    "case_demo_1",
+    "case_demo_2",
+    "case_demo_3",
+    "case_demo_4",
+    "case_demo_5"
+   ]
+  },
+  {
+   "t": 95.7,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_cases",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+   "ids": [
+    "case_demo_5",
+    "case_demo_6",
+    "case_demo_7"
+   ]
+  },
+  {
+   "t": 96.0,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_rules",
+   "n": 4,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM optimal position invented temperate climate",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2",
+    "rule_demo_3"
+   ]
+  },
+  {
+   "t": 96.3,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_rules",
+   "n": 4,
+   "elapsed_sec": 0.3,
+   "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+   "ids": [
+    "rule_demo_2",
+    "rule_demo_3",
+    "rule_demo_4",
+    "rule_demo_5"
+   ]
+  },
+  {
+   "t": 96.6,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM placement wall layer energy reduction",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2"
+   ]
+  },
+  {
+   "t": 96.9,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "neo4j_template",
+   "template": "cases_by_climate",
+   "n": 0,
+   "elapsed_sec": 0.3
+  },
+  {
+   "t": 98.9,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 2,
+   "elapsed_sec": 2.0,
+   "caller": "paper_rerank",
+   "model": "gpt-5.2",
+   "input_tokens": 515,
+   "output_tokens": 100,
+   "cost_usd": 0.00230125
+  },
+  {
+   "t": 99.2,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 2,
+   "fn": "retrieve_paper_chunks",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "organic PCM latent heat 200 kJ/kg thickness 20 mm",
+   "ids": [
+    "0123456789abcdef__text__0001",
+    "0123456789abcdef__text__0002",
+    "0123456789abcdef__text__0003"
+   ]
+  },
+  {
+   "t": 169.2,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 2,
+   "elapsed_sec": 70.0,
+   "caller": "reasoner",
+   "model": "gpt-5",
+   "input_tokens": 5513,
+   "output_tokens": 7000,
+   "cost_usd": 0.07689125
+  },
+  {
+   "t": 169.3,
+   "kind": "agent_end",
+   "agent": "reasoner",
+   "attempt": 2,
+   "elapsed_sec": 74.2,
+   "pos": 3,
+   "tm": 24.0,
+   "confidence": 0.55
+  },
+  {
+   "t": 169.4,
+   "kind": "agent_start",
+   "agent": "judge",
+   "attempt": 2
+  },
+  {
+   "t": 169.7,
+   "kind": "retrieval",
+   "agent": "judge",
+   "attempt": 2,
+   "fn": "judge.neo4j_template",
+   "template": "verify_case_evidence",
+   "n": 1,
+   "elapsed_sec": 0.3,
+   "ids": [
+    "case_demo_1"
+   ]
+  },
+  {
+   "t": 169.8,
+   "kind": "agent_end",
+   "agent": "judge",
+   "attempt": 2,
+   "elapsed_sec": 0.4,
+   "verdict": "retry",
+   "n_fatal": 0,
+   "n_soft": 1
+  },
+  {
+   "t": 169.9,
+   "kind": "agent_start",
+   "agent": "reasoner",
+   "attempt": 3
+  },
+  {
+   "t": 170.2,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_cases_with_fallback",
+   "n": 6,
+   "elapsed_sec": 0.3,
+   "fallback_used": false,
+   "query": "invented temperate climate, four-layer wall, organic PCM, minimize annual energy",
+   "ids": [
+    "case_demo_0",
+    "case_demo_1",
+    "case_demo_2",
+    "case_demo_3",
+    "case_demo_4",
+    "case_demo_5"
+   ]
+  },
+  {
+   "t": 170.5,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_cases",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+   "ids": [
+    "case_demo_5",
+    "case_demo_6",
+    "case_demo_7"
+   ]
+  },
+  {
+   "t": 170.8,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_rules",
+   "n": 4,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM optimal position invented temperate climate",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2",
+    "rule_demo_3"
+   ]
+  },
+  {
+   "t": 171.1,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_rules",
+   "n": 4,
+   "elapsed_sec": 0.3,
+   "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+   "ids": [
+    "rule_demo_2",
+    "rule_demo_3",
+    "rule_demo_4",
+    "rule_demo_5"
+   ]
+  },
+  {
+   "t": 171.4,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "energy saving PCM placement wall layer energy reduction",
+   "ids": [
+    "rule_demo_0",
+    "rule_demo_1",
+    "rule_demo_2"
+   ]
+  },
+  {
+   "t": 171.7,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "neo4j_template",
+   "template": "cases_by_climate",
+   "n": 0,
+   "elapsed_sec": 0.3
+  },
+  {
+   "t": 173.7,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 3,
+   "elapsed_sec": 2.0,
+   "caller": "paper_rerank",
+   "model": "gpt-5.2",
+   "input_tokens": 515,
+   "output_tokens": 100,
+   "cost_usd": 0.00230125
+  },
+  {
+   "t": 174.0,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 3,
+   "fn": "retrieve_paper_chunks",
+   "n": 3,
+   "elapsed_sec": 0.3,
+   "query": "organic PCM latent heat 200 kJ/kg thickness 20 mm",
+   "ids": [
+    "0123456789abcdef__text__0001",
+    "0123456789abcdef__text__0002",
+    "0123456789abcdef__text__0003"
+   ]
+  },
+  {
+   "t": 244.0,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 3,
+   "elapsed_sec": 70.0,
+   "caller": "reasoner",
+   "model": "gpt-5",
+   "input_tokens": 5521,
+   "output_tokens": 7000,
+   "cost_usd": 0.07690125
+  },
+  {
+   "t": 244.1,
+   "kind": "agent_end",
+   "agent": "reasoner",
+   "attempt": 3,
+   "elapsed_sec": 74.2,
+   "pos": 3,
+   "tm": 24.0,
+   "confidence": 0.55
+  },
+  {
+   "t": 244.2,
+   "kind": "agent_start",
+   "agent": "judge",
+   "attempt": 3
+  },
+  {
+   "t": 244.5,
+   "kind": "retrieval",
+   "agent": "judge",
+   "attempt": 3,
+   "fn": "judge.neo4j_template",
+   "template": "verify_case_evidence",
+   "n": 1,
+   "elapsed_sec": 0.3,
+   "ids": [
+    "case_demo_1"
+   ]
+  },
+  {
+   "t": 244.6,
+   "kind": "agent_end",
+   "agent": "judge",
+   "attempt": 3,
+   "elapsed_sec": 0.4,
+   "verdict": "retry",
+   "n_fatal": 0,
+   "n_soft": 1
+  }
+ ],
+ "usage": {
+  "by_caller": {
+   "analyst": {
+    "calls": 1,
+    "input_tokens": 889,
+    "cached_tokens": 0,
+    "output_tokens": 1800,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 20.0,
+    "cost_usd": 0.00382
+   },
+   "paper_rerank": {
+    "calls": 3,
+    "input_tokens": 1545,
+    "cached_tokens": 0,
+    "output_tokens": 300,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 6.0,
+    "cost_usd": 0.0069
+   },
+   "reasoner": {
+    "calls": 3,
+    "input_tokens": 15878,
+    "cached_tokens": 0,
+    "output_tokens": 21000,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 210.0,
+    "cost_usd": 0.22984
+   }
+  },
+  "by_model": {
+   "gpt-5-mini": {
+    "calls": 1,
+    "input_tokens": 889,
+    "cached_tokens": 0,
+    "output_tokens": 1800,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 20.0,
+    "cost_usd": 0.00382
+   },
+   "gpt-5.2": {
+    "calls": 3,
+    "input_tokens": 1545,
+    "cached_tokens": 0,
+    "output_tokens": 300,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 6.0,
+    "cost_usd": 0.0069
+   },
+   "gpt-5": {
+    "calls": 3,
+    "input_tokens": 15878,
+    "cached_tokens": 0,
+    "output_tokens": 21000,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 210.0,
+    "cost_usd": 0.22984
+   }
+  },
+  "cost_usd_total": 0.24056
+ },
+ "score": {
+  "status": "ok",
+  "pos": 3,
+  "tm": 24.0,
+  "gt_pos": 4,
+  "gt_tm": 22.0,
+  "exact_pos_hit": false,
+  "near_pos_hit": true,
+  "tm_hit_2c": true,
+  "tm_hit_4c": true,
+  "joint_strict": false,
+  "joint_loose": true,
+  "capture_loss": 0.45000000000000007
+ },
+ "truth": {
+  "gt_pos": 4,
+  "gt_tm": 22.0,
+  "tied_tm_set": [
+   22.0
+  ],
+  "savings_pct": 4.0,
+  "baseline_kWh": 10000.0,
+  "optimum_kWh": 9600.0
+ },
+ "evidence": {
+  "case_demo_1": {
+   "type": "case",
+   "verified": true,
+   "paper": "Invented paper B",
+   "climate": "Invented climate",
+   "favored": [
+    "interior side"
+   ],
+   "relation": null,
+   "text": "Invented case 1: a simulated office wall where an inner PCM layer lowered annual load."
+  },
+  "rule_demo_1": {
+   "type": "rule",
+   "verified": true,
+   "paper": "Invented paper B",
+   "climate": null,
+   "favored": [],
+   "relation": "FAVORS",
+   "text": "Invented statement 1: PCM closer to the room couples better to it."
+  },
+  "0123456789abcdef__text__0001": {
+   "type": "paper",
+   "verified": true,
+   "paper": null,
+   "climate": null,
+   "favored": [],
+   "relation": null,
+   "text": null
+  }
+ }
+}

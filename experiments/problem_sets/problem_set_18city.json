@@ -1,0 +1,2270 @@
+[
+  {
+    "city": "beijing",
+    "zone": "continental",
+    "epw_filename": "CHN_Beijing.Beijing.545110_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "beijing",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "continental",
+      "baseline_total_kWh": 8672.22222222222,
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 8450.0,
+      "gt_savings_pct": 2.5624599615630848,
+      "gt_delta_kWh": -222.2222222222208,
+      "gt_discomfort_h": 2090.4,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 8450.0,
+          "pct_savings": 2.5624599615630848,
+          "delta_kWh": -222.2222222222208,
+          "latent_utilization": 0.9611872146118722,
+          "discomfort_hours": 2090.4
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 8475.0,
+          "pct_savings": 2.274183215887236,
+          "delta_kWh": -197.2222222222208,
+          "latent_utilization": 0.8496575342465753,
+          "discomfort_hours": 2067.37
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 8480.555555555557,
+          "pct_savings": 2.2101217168481466,
+          "delta_kWh": -191.66666666666424,
+          "latent_utilization": 0.8272831050228311,
+          "discomfort_hours": 2062.02
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 8488.888888888889,
+          "pct_savings": 2.1140294682895444,
+          "delta_kWh": -183.33333333333212,
+          "latent_utilization": 0.9458904109589041,
+          "discomfort_hours": 2062.73
+        },
+        {
+          "pos": 4,
+          "tm": 16.0,
+          "total_kWh": 8488.888888888889,
+          "pct_savings": 2.1140294682895444,
+          "delta_kWh": -183.33333333333212,
+          "latent_utilization": 0.9460045662100457,
+          "discomfort_hours": 2073.02
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 8633.333333333332
+    }
+  },
+  {
+    "city": "chicago",
+    "zone": "continental",
+    "epw_filename": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "chicago",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "continental",
+      "baseline_total_kWh": 11138.888888888889,
+      "gt_pos": 4,
+      "gt_tm": 16.0,
+      "gt_total_kWh": 10866.666666666668,
+      "gt_savings_pct": 2.4438902743142017,
+      "gt_delta_kWh": -272.2222222222208,
+      "gt_discomfort_h": 2038.57,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 16.0,
+          "total_kWh": 10866.666666666668,
+          "pct_savings": 2.4438902743142017,
+          "delta_kWh": -272.2222222222208,
+          "latent_utilization": 0.953310502283105,
+          "discomfort_hours": 2038.57
+        },
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 10869.444444444445,
+          "pct_savings": 2.418952618453856,
+          "delta_kWh": -269.44444444444343,
+          "latent_utilization": 0.9647260273972603,
+          "discomfort_hours": 2032.68
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 10916.666666666668,
+          "pct_savings": 1.9950124688279176,
+          "delta_kWh": -222.2222222222208,
+          "latent_utilization": 0.8485159817351599,
+          "discomfort_hours": 2023.97
+        },
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 10930.555555555557,
+          "pct_savings": 1.8703241895261737,
+          "delta_kWh": -208.33333333333212,
+          "latent_utilization": 0.9818493150684932,
+          "discomfort_hours": 1999.98
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 10936.11111111111,
+          "pct_savings": 1.820448877805499,
+          "delta_kWh": -202.7777777777792,
+          "latent_utilization": 0.8742009132420091,
+          "discomfort_hours": 2016.43
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 11100.0
+    }
+  },
+  {
+    "city": "newyork",
+    "zone": "continental",
+    "epw_filename": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "newyork",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "continental",
+      "baseline_total_kWh": 7561.11111111111,
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 7391.666666666666,
+      "gt_savings_pct": 2.2409992652461415,
+      "gt_delta_kWh": -169.44444444444434,
+      "gt_discomfort_h": 2056.3,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 7391.666666666666,
+          "pct_savings": 2.2409992652461415,
+          "delta_kWh": -169.44444444444434,
+          "latent_utilization": 0.9528538812785388,
+          "discomfort_hours": 2056.3
+        },
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 7391.666666666666,
+          "pct_savings": 2.2409992652461415,
+          "delta_kWh": -169.44444444444434,
+          "latent_utilization": 0.9886986301369863,
+          "discomfort_hours": 2037.27
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 7411.111111111111,
+          "pct_savings": 1.9838354151359177,
+          "delta_kWh": -149.9999999999991,
+          "latent_utilization": 0.8501141552511415,
+          "discomfort_hours": 2038.17
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 7411.111111111111,
+          "pct_savings": 1.9838354151359177,
+          "delta_kWh": -149.9999999999991,
+          "latent_utilization": 0.9393835616438356,
+          "discomfort_hours": 2025.13
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 7422.222222222222,
+          "pct_savings": 1.8368846436443766,
+          "delta_kWh": -138.8888888888887,
+          "latent_utilization": 0.8234018264840183,
+          "discomfort_hours": 2044.13
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 7519.444444444444
+    }
+  },
+  {
+    "city": "albuquerque",
+    "zone": "dry",
+    "epw_filename": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "albuquerque",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "dry",
+      "baseline_total_kWh": 6908.333333333332,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 6533.333333333334,
+      "gt_savings_pct": 5.4282267792520855,
+      "gt_delta_kWh": -374.9999999999982,
+      "gt_discomfort_h": 1568.6,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 6533.333333333334,
+          "pct_savings": 5.4282267792520855,
+          "delta_kWh": -374.9999999999982,
+          "latent_utilization": 0.8775114155251141,
+          "discomfort_hours": 1568.6
+        },
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 6536.111111111111,
+          "pct_savings": 5.388017691998372,
+          "delta_kWh": -372.2222222222208,
+          "latent_utilization": 0.8563926940639269,
+          "discomfort_hours": 1607.87
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 6558.333333333333,
+          "pct_savings": 5.066344993968626,
+          "delta_kWh": -349.9999999999991,
+          "latent_utilization": 0.8301369863013699,
+          "discomfort_hours": 1554.32
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 6566.666666666667,
+          "pct_savings": 4.9457177322074575,
+          "delta_kWh": -341.66666666666515,
+          "latent_utilization": 0.7970319634703197,
+          "discomfort_hours": 1568.92
+        },
+        {
+          "pos": 3,
+          "tm": 18.0,
+          "total_kWh": 6569.444444444444,
+          "pct_savings": 4.905508644953744,
+          "delta_kWh": -338.8888888888878,
+          "latent_utilization": 0.8561643835616438,
+          "discomfort_hours": 1541.13
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 6725.0
+    }
+  },
+  {
+    "city": "phoenix",
+    "zone": "dry",
+    "epw_filename": "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "phoenix",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "dry",
+      "baseline_total_kWh": 10363.888888888887,
+      "gt_pos": 4,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 9986.11111111111,
+      "gt_savings_pct": 3.6451353524524226,
+      "gt_delta_kWh": -377.7777777777774,
+      "gt_discomfort_h": 769.72,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 26.0,
+          "total_kWh": 9986.11111111111,
+          "pct_savings": 3.6451353524524226,
+          "delta_kWh": -377.7777777777774,
+          "latent_utilization": 0.9377853881278538,
+          "discomfort_hours": 769.72
+        },
+        {
+          "pos": 4,
+          "tm": 28.0,
+          "total_kWh": 9986.111111111111,
+          "pct_savings": 3.645135352452405,
+          "delta_kWh": -377.77777777777555,
+          "latent_utilization": 0.8488584474885845,
+          "discomfort_hours": 757.0
+        },
+        {
+          "pos": 4,
+          "tm": 30.0,
+          "total_kWh": 9988.888888888889,
+          "pct_savings": 3.6183328866255526,
+          "delta_kWh": -374.9999999999982,
+          "latent_utilization": 0.7381278538812786,
+          "discomfort_hours": 767.5
+        },
+        {
+          "pos": 3,
+          "tm": 30.0,
+          "total_kWh": 10008.333333333334,
+          "pct_savings": 3.430715625837552,
+          "delta_kWh": -355.5555555555529,
+          "latent_utilization": 0.7349315068493151,
+          "discomfort_hours": 745.67
+        },
+        {
+          "pos": 3,
+          "tm": 32.0,
+          "total_kWh": 10013.88888888889,
+          "pct_savings": 3.3771106941838305,
+          "delta_kWh": -349.99999999999636,
+          "latent_utilization": 0.6431506849315068,
+          "discomfort_hours": 742.65
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 10191.666666666666
+    }
+  },
+  {
+    "city": "turpan",
+    "zone": "dry",
+    "epw_filename": "CHN_Xinjiang.Uygur.Turpan.515730_CSWD.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "turpan",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "dry",
+      "baseline_total_kWh": 14169.444444444443,
+      "gt_pos": 4,
+      "gt_tm": 16.0,
+      "gt_total_kWh": 13819.444444444443,
+      "gt_savings_pct": 2.470103901195844,
+      "gt_delta_kWh": -350.0,
+      "gt_discomfort_h": 1965.95,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 16.0,
+          "total_kWh": 13819.444444444443,
+          "pct_savings": 2.470103901195844,
+          "delta_kWh": -350.0,
+          "latent_utilization": 0.7800228310502283,
+          "discomfort_hours": 1965.95
+        },
+        {
+          "pos": 1,
+          "tm": 12.0,
+          "total_kWh": 13836.111111111111,
+          "pct_savings": 2.3524799059007955,
+          "delta_kWh": -333.3333333333321,
+          "latent_utilization": 0.6181506849315068,
+          "discomfort_hours": 1990.02
+        },
+        {
+          "pos": 0,
+          "tm": 12.0,
+          "total_kWh": 13844.444444444445,
+          "pct_savings": 2.293667908253271,
+          "delta_kWh": -324.9999999999982,
+          "latent_utilization": 0.621689497716895,
+          "discomfort_hours": 1980.85
+        },
+        {
+          "pos": 1,
+          "tm": 14.0,
+          "total_kWh": 13850.0,
+          "pct_savings": 2.2544599098215965,
+          "delta_kWh": -319.44444444444343,
+          "latent_utilization": 0.7606164383561644,
+          "discomfort_hours": 1989.1
+        },
+        {
+          "pos": 4,
+          "tm": 14.0,
+          "total_kWh": 13850.0,
+          "pct_savings": 2.2544599098215965,
+          "delta_kWh": -319.44444444444343,
+          "latent_utilization": 0.7561643835616438,
+          "discomfort_hours": 1961.1
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 14127.777777777777
+    }
+  },
+  {
+    "city": "athens",
+    "zone": "mediterranean",
+    "epw_filename": "GRC_Athens.167160_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "athens",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "mediterranean",
+      "baseline_total_kWh": 5161.11111111111,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 4944.444444444444,
+      "gt_savings_pct": 4.198062432723347,
+      "gt_delta_kWh": -216.66666666666606,
+      "gt_discomfort_h": 1027.68,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 4944.444444444444,
+          "pct_savings": 4.198062432723347,
+          "delta_kWh": -216.66666666666606,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 1027.68
+        },
+        {
+          "pos": 3,
+          "tm": 18.0,
+          "total_kWh": 4947.222222222222,
+          "pct_savings": 4.144241119483312,
+          "delta_kWh": -213.8888888888887,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 1009.12
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 4955.555555555556,
+          "pct_savings": 3.982777179763171,
+          "delta_kWh": -205.55555555555475,
+          "latent_utilization": 0.9552511415525115,
+          "discomfort_hours": 1023.63
+        },
+        {
+          "pos": 3,
+          "tm": 20.0,
+          "total_kWh": 4963.888888888889,
+          "pct_savings": 3.8213132400430476,
+          "delta_kWh": -197.22222222222172,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 1012.67
+        },
+        {
+          "pos": 4,
+          "tm": 22.0,
+          "total_kWh": 4969.444444444444,
+          "pct_savings": 3.7136706135629596,
+          "delta_kWh": -191.66666666666606,
+          "latent_utilization": 0.9878995433789954,
+          "discomfort_hours": 1006.68
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 5058.333333333333
+    }
+  },
+  {
+    "city": "sandiego",
+    "zone": "mediterranean",
+    "epw_filename": "USA_CA_San.Diego-Montgomery.Field.722903_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "sandiego",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "mediterranean",
+      "baseline_total_kWh": 3752.777777777778,
+      "gt_pos": 4,
+      "gt_tm": 24.0,
+      "gt_total_kWh": 3544.4444444444443,
+      "gt_savings_pct": 5.551443375277577,
+      "gt_delta_kWh": -208.33333333333348,
+      "gt_discomfort_h": 239.25,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 24.0,
+          "total_kWh": 3544.4444444444443,
+          "pct_savings": 5.551443375277577,
+          "delta_kWh": -208.33333333333348,
+          "latent_utilization": 0.994406392694064,
+          "discomfort_hours": 239.25
+        },
+        {
+          "pos": 4,
+          "tm": 22.0,
+          "total_kWh": 3561.1111111111113,
+          "pct_savings": 5.107327905255362,
+          "delta_kWh": -191.66666666666652,
+          "latent_utilization": 0.9965753424657534,
+          "discomfort_hours": 231.68
+        },
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 3563.8888888888887,
+          "pct_savings": 5.033308660251672,
+          "delta_kWh": -188.88888888888914,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 238.65
+        },
+        {
+          "pos": 4,
+          "tm": 26.0,
+          "total_kWh": 3572.222222222222,
+          "pct_savings": 4.811250925240565,
+          "delta_kWh": -180.55555555555566,
+          "latent_utilization": 0.8341324200913242,
+          "discomfort_hours": 238.92
+        },
+        {
+          "pos": 3,
+          "tm": 18.0,
+          "total_kWh": 3575.0,
+          "pct_savings": 4.737231680236863,
+          "delta_kWh": -177.77777777777783,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 232.9
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 3694.4444444444443
+    }
+  },
+  {
+    "city": "sanfrancisco",
+    "zone": "mediterranean",
+    "epw_filename": "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "sanfrancisco",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "mediterranean",
+      "baseline_total_kWh": 2086.111111111111,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 1891.6666666666665,
+      "gt_savings_pct": 9.320905459387479,
+      "gt_delta_kWh": -194.44444444444434,
+      "gt_discomfort_h": 469.73,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 1891.6666666666665,
+          "pct_savings": 9.320905459387479,
+          "delta_kWh": -194.44444444444434,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 469.73
+        },
+        {
+          "pos": 4,
+          "tm": 22.0,
+          "total_kWh": 1902.7777777777776,
+          "pct_savings": 8.788282290279625,
+          "delta_kWh": -183.33333333333326,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 455.18
+        },
+        {
+          "pos": 3,
+          "tm": 18.0,
+          "total_kWh": 1916.6666666666667,
+          "pct_savings": 8.122503328894792,
+          "delta_kWh": -169.44444444444412,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 463.05
+        },
+        {
+          "pos": 4,
+          "tm": 24.0,
+          "total_kWh": 1922.2222222222222,
+          "pct_savings": 7.85619174434087,
+          "delta_kWh": -163.8888888888887,
+          "latent_utilization": 0.9087899543378996,
+          "discomfort_hours": 466.82
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 1924.9999999999998,
+          "pct_savings": 7.723035952063915,
+          "delta_kWh": -161.1111111111111,
+          "latent_utilization": 0.9785388127853881,
+          "discomfort_hours": 467.05
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 2008.3333333333335
+    }
+  },
+  {
+    "city": "london",
+    "zone": "oceanic",
+    "epw_filename": "GBR_London.Gatwick.037760_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "london",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "oceanic",
+      "baseline_total_kWh": 4530.555555555556,
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 4391.666666666666,
+      "gt_savings_pct": 3.0656039239730384,
+      "gt_delta_kWh": -138.8888888888896,
+      "gt_discomfort_h": 1832.87,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 4391.666666666666,
+          "pct_savings": 3.0656039239730384,
+          "delta_kWh": -138.8888888888896,
+          "latent_utilization": 0.9965753424657534,
+          "discomfort_hours": 1832.87
+        },
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 4402.777777777777,
+          "pct_savings": 2.820355610055192,
+          "delta_kWh": -127.77777777777828,
+          "latent_utilization": 0.9952054794520548,
+          "discomfort_hours": 1805.95
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 4413.888888888889,
+          "pct_savings": 2.575107296137346,
+          "delta_kWh": -116.66666666666697,
+          "latent_utilization": 0.9530821917808219,
+          "discomfort_hours": 1807.82
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 4419.444444444444,
+          "pct_savings": 2.4524831391784225,
+          "delta_kWh": -111.11111111111131,
+          "latent_utilization": 0.9950913242009133,
+          "discomfort_hours": 1798.82
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 4419.444444444444,
+          "pct_savings": 2.4524831391784225,
+          "delta_kWh": -111.11111111111131,
+          "latent_utilization": 1.0,
+          "discomfort_hours": 1775.72
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 4511.111111111111
+    }
+  },
+  {
+    "city": "seattle",
+    "zone": "oceanic",
+    "epw_filename": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "seattle",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "oceanic",
+      "baseline_total_kWh": 3927.777777777778,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 3808.333333333333,
+      "gt_savings_pct": 3.04101838755305,
+      "gt_delta_kWh": -119.4444444444448,
+      "gt_discomfort_h": 1532.32,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 3808.333333333333,
+          "pct_savings": 3.04101838755305,
+          "delta_kWh": -119.4444444444448,
+          "latent_utilization": 0.9928082191780822,
+          "discomfort_hours": 1532.32
+        },
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 3816.6666666666665,
+          "pct_savings": 2.828854314002834,
+          "delta_kWh": -111.11111111111131,
+          "latent_utilization": 0.9965753424657534,
+          "discomfort_hours": 1562.75
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 3827.7777777777774,
+          "pct_savings": 2.5459688826025575,
+          "delta_kWh": -100.00000000000045,
+          "latent_utilization": 0.9897260273972602,
+          "discomfort_hours": 1514.62
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 3827.777777777778,
+          "pct_savings": 2.545968882602546,
+          "delta_kWh": -100.0,
+          "latent_utilization": 0.9487442922374429,
+          "discomfort_hours": 1519.38
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 3827.777777777778,
+          "pct_savings": 2.545968882602546,
+          "delta_kWh": -100.0,
+          "latent_utilization": 0.9994292237442922,
+          "discomfort_hours": 1503.38
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 3886.111111111111
+    }
+  },
+  {
+    "city": "vancouver",
+    "zone": "oceanic",
+    "epw_filename": "CAN_BC_Vancouver.718920_CWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.64658266125891
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "vancouver",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "oceanic",
+      "baseline_total_kWh": 5119.444444444444,
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 5002.777777777777,
+      "gt_savings_pct": 2.278893109061319,
+      "gt_delta_kWh": -116.66666666666697,
+      "gt_discomfort_h": 1866.97,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 5002.777777777777,
+          "pct_savings": 2.278893109061319,
+          "delta_kWh": -116.66666666666697,
+          "latent_utilization": 0.9974885844748859,
+          "discomfort_hours": 1866.97
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 5008.333333333334,
+          "pct_savings": 2.170374389582189,
+          "delta_kWh": -111.1111111111104,
+          "latent_utilization": 0.9591324200913242,
+          "discomfort_hours": 1829.7
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 5013.888888888889,
+          "pct_savings": 2.061855670103095,
+          "delta_kWh": -105.55555555555566,
+          "latent_utilization": 0.997716894977169,
+          "discomfort_hours": 1834.28
+        },
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 5016.666666666666,
+          "pct_savings": 2.0075963103635477,
+          "delta_kWh": -102.77777777777828,
+          "latent_utilization": 0.9953196347031964,
+          "discomfort_hours": 1836.18
+        },
+        {
+          "pos": 0,
+          "tm": 12.0,
+          "total_kWh": 5022.222222222222,
+          "pct_savings": 1.8990775908844355,
+          "delta_kWh": -97.22222222222263,
+          "latent_utilization": 0.964041095890411,
+          "discomfort_hours": 1813.5
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 5119.444444444444
+    }
+  },
+  {
+    "city": "atlanta",
+    "zone": "subtropical",
+    "epw_filename": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "atlanta",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "subtropical",
+      "baseline_total_kWh": 7297.222222222223,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 6980.555555555556,
+      "gt_savings_pct": 4.339550818424062,
+      "gt_delta_kWh": -316.66666666666697,
+      "gt_discomfort_h": 1593.15,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 6980.555555555556,
+          "pct_savings": 4.339550818424062,
+          "delta_kWh": -316.66666666666697,
+          "latent_utilization": 0.9486301369863014,
+          "discomfort_hours": 1593.15
+        },
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 6994.444444444444,
+          "pct_savings": 4.149219642177395,
+          "delta_kWh": -302.7777777777783,
+          "latent_utilization": 0.8625570776255708,
+          "discomfort_hours": 1622.15
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 7008.333333333333,
+          "pct_savings": 3.958888465930729,
+          "delta_kWh": -288.8888888888896,
+          "latent_utilization": 0.6815068493150684,
+          "discomfort_hours": 1603.87
+        },
+        {
+          "pos": 4,
+          "tm": 16.0,
+          "total_kWh": 7011.111111111111,
+          "pct_savings": 3.920822230681388,
+          "delta_kWh": -286.1111111111113,
+          "latent_utilization": 0.830365296803653,
+          "discomfort_hours": 1627.25
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 7016.666666666667,
+          "pct_savings": 3.8446897601827192,
+          "delta_kWh": -280.55555555555566,
+          "latent_utilization": 0.7192922374429224,
+          "discomfort_hours": 1604.58
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 7180.555555555556
+    }
+  },
+  {
+    "city": "shanghai",
+    "zone": "subtropical",
+    "epw_filename": "CHN_Shanghai.Shanghai.583670_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "shanghai",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "subtropical",
+      "baseline_total_kWh": 7911.111111111111,
+      "gt_pos": 4,
+      "gt_tm": 20.0,
+      "gt_total_kWh": 7716.666666666667,
+      "gt_savings_pct": 2.4578651685393247,
+      "gt_delta_kWh": -194.44444444444434,
+      "gt_discomfort_h": 2577.72,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 20.0,
+          "total_kWh": 7716.666666666667,
+          "pct_savings": 2.4578651685393247,
+          "delta_kWh": -194.44444444444434,
+          "latent_utilization": 0.9438356164383561,
+          "discomfort_hours": 2577.72
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 7719.444444444444,
+          "pct_savings": 2.422752808988768,
+          "delta_kWh": -191.66666666666697,
+          "latent_utilization": 0.6789954337899543,
+          "discomfort_hours": 2562.65
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 7719.444444444444,
+          "pct_savings": 2.422752808988768,
+          "delta_kWh": -191.66666666666697,
+          "latent_utilization": 0.707648401826484,
+          "discomfort_hours": 2559.05
+        },
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 7722.222222222221,
+          "pct_savings": 2.387640449438223,
+          "delta_kWh": -188.8888888888905,
+          "latent_utilization": 0.8536529680365297,
+          "discomfort_hours": 2587.65
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 7724.999999999999,
+          "pct_savings": 2.3525280898876546,
+          "delta_kWh": -186.11111111111222,
+          "latent_utilization": 0.8277397260273973,
+          "discomfort_hours": 2557.68
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 7800.0
+    }
+  },
+  {
+    "city": "tokyo",
+    "zone": "subtropical",
+    "epw_filename": "JPN_Tokyo.Hyakuri.477150_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "tokyo",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "subtropical",
+      "baseline_total_kWh": 7591.666666666667,
+      "gt_pos": 4,
+      "gt_tm": 18.0,
+      "gt_total_kWh": 7272.222222222222,
+      "gt_savings_pct": 4.207830223197962,
+      "gt_delta_kWh": -319.44444444444525,
+      "gt_discomfort_h": 2466.72,
+      "response_surface_top5": [
+        {
+          "pos": 4,
+          "tm": 18.0,
+          "total_kWh": 7272.222222222222,
+          "pct_savings": 4.207830223197962,
+          "delta_kWh": -319.44444444444525,
+          "latent_utilization": 0.8974885844748859,
+          "discomfort_hours": 2466.72
+        },
+        {
+          "pos": 4,
+          "tm": 16.0,
+          "total_kWh": 7302.777777777777,
+          "pct_savings": 3.805342114892069,
+          "delta_kWh": -288.8888888888896,
+          "latent_utilization": 0.8668949771689498,
+          "discomfort_hours": 2468.67
+        },
+        {
+          "pos": 1,
+          "tm": 12.0,
+          "total_kWh": 7308.333333333333,
+          "pct_savings": 3.7321624588364513,
+          "delta_kWh": -283.33333333333394,
+          "latent_utilization": 0.7296803652968037,
+          "discomfort_hours": 2421.73
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 7308.333333333334,
+          "pct_savings": 3.7321624588364393,
+          "delta_kWh": -283.33333333333303,
+          "latent_utilization": 0.7587899543378995,
+          "discomfort_hours": 2435.33
+        },
+        {
+          "pos": 2,
+          "tm": 12.0,
+          "total_kWh": 7311.111111111111,
+          "pct_savings": 3.6955726308086363,
+          "delta_kWh": -280.55555555555566,
+          "latent_utilization": 0.7222602739726027,
+          "discomfort_hours": 2424.45
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 7483.333333333332
+    }
+  },
+  {
+    "city": "bangkok",
+    "zone": "tropical",
+    "epw_filename": "THA_Bangkok.484560_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "bangkok",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "tropical",
+      "baseline_total_kWh": 16008.333333333334,
+      "gt_pos": 3,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 15708.333333333332,
+      "gt_savings_pct": 1.8740239458615418,
+      "gt_delta_kWh": -300.0000000000018,
+      "gt_discomfort_h": 1965.03,
+      "response_surface_top5": [
+        {
+          "pos": 3,
+          "tm": 26.0,
+          "total_kWh": 15708.333333333332,
+          "pct_savings": 1.8740239458615418,
+          "delta_kWh": -300.0000000000018,
+          "latent_utilization": 0.9997716894977169,
+          "discomfort_hours": 1965.03
+        },
+        {
+          "pos": 3,
+          "tm": 28.0,
+          "total_kWh": 15733.333333333334,
+          "pct_savings": 1.717855283706403,
+          "delta_kWh": -275.0,
+          "latent_utilization": 0.9995433789954338,
+          "discomfort_hours": 1938.8
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 15761.111111111111,
+          "pct_savings": 1.5443345479784858,
+          "delta_kWh": -247.22222222222263,
+          "latent_utilization": 0.013812785388127854,
+          "discomfort_hours": 1941.88
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 15761.111111111111,
+          "pct_savings": 1.5443345479784858,
+          "delta_kWh": -247.22222222222263,
+          "latent_utilization": 0.028310502283105023,
+          "discomfort_hours": 1941.88
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 15761.111111111111,
+          "pct_savings": 1.5443345479784858,
+          "delta_kWh": -247.22222222222263,
+          "latent_utilization": 0.0569634703196347,
+          "discomfort_hours": 1941.88
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 15858.333333333334
+    }
+  },
+  {
+    "city": "miami",
+    "zone": "tropical",
+    "epw_filename": "USA_FL_Miami.Intl.AP.722020_TMY3.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "miami",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "tropical",
+      "baseline_total_kWh": 11852.777777777777,
+      "gt_pos": 3,
+      "gt_tm": 12.0,
+      "gt_total_kWh": 11680.555555555555,
+      "gt_savings_pct": 1.4530114834778567,
+      "gt_delta_kWh": -172.22222222222263,
+      "gt_discomfort_h": 1241.35,
+      "response_surface_top5": [
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 11680.555555555555,
+          "pct_savings": 1.4530114834778567,
+          "delta_kWh": -172.22222222222263,
+          "latent_utilization": 0.09337899543378995,
+          "discomfort_hours": 1241.35
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 11680.555555555555,
+          "pct_savings": 1.4530114834778567,
+          "delta_kWh": -172.22222222222263,
+          "latent_utilization": 0.1343607305936073,
+          "discomfort_hours": 1241.35
+        },
+        {
+          "pos": 3,
+          "tm": 16.0,
+          "total_kWh": 11680.555555555555,
+          "pct_savings": 1.4530114834778567,
+          "delta_kWh": -172.22222222222263,
+          "latent_utilization": 0.2115296803652968,
+          "discomfort_hours": 1241.38
+        },
+        {
+          "pos": 3,
+          "tm": 18.0,
+          "total_kWh": 11680.555555555555,
+          "pct_savings": 1.4530114834778567,
+          "delta_kWh": -172.22222222222263,
+          "latent_utilization": 0.37374429223744293,
+          "discomfort_hours": 1241.45
+        },
+        {
+          "pos": 3,
+          "tm": 20.0,
+          "total_kWh": 11680.555555555555,
+          "pct_savings": 1.4530114834778567,
+          "delta_kWh": -172.22222222222263,
+          "latent_utilization": 0.6544520547945205,
+          "discomfort_hours": 1242.23
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 11769.444444444443
+    }
+  },
+  {
+    "city": "singapore",
+    "zone": "tropical",
+    "epw_filename": "SGP_Singapore.486980_IWEC.epw",
+    "wall_assembly_text": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+    "wall_layers": [
+      {
+        "name": "F07 25mm stucco",
+        "object_type": "Material",
+        "thickness_m": 0.0254,
+        "conductivity_W_mK": 0.72,
+        "density_kg_m3": 1856.0,
+        "specific_heat_J_kgK": 840.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      },
+      {
+        "name": "Nonres_Exterior_Wall_Insulation_grd",
+        "object_type": "Material:NoMass",
+        "thickness_m": null,
+        "conductivity_W_mK": null,
+        "density_kg_m3": null,
+        "specific_heat_J_kgK": null,
+        "r_value_m2K_W": 1.06783369996193
+      },
+      {
+        "name": "G01 16mm gypsum board",
+        "object_type": "Material",
+        "thickness_m": 0.0159,
+        "conductivity_W_mK": 0.16,
+        "density_kg_m3": 800.0,
+        "specific_heat_J_kgK": 1090.0,
+        "r_value_m2K_W": null
+      }
+    ],
+    "setpoints": {
+      "cooling_setpoint_c": 23.89,
+      "cooling_setback_c": 29.44,
+      "heating_setpoint_c": 21.11,
+      "heating_setback_c": 15.56
+    },
+    "schedule": {
+      "occupied_start_hhmm": "06:00",
+      "occupied_end_hhmm": "18:00",
+      "occupied_hours_per_weekday": 12.0,
+      "active_days_per_week": 5,
+      "summary": "WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback"
+    },
+    "analyst_input": {
+      "climate": "singapore",
+      "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+      "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.07 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+      "goal": "minimize total annual building energy (heating + cooling)",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+    },
+    "ground_truth": {
+      "zone": "tropical",
+      "baseline_total_kWh": 15283.333333333334,
+      "gt_pos": 3,
+      "gt_tm": 26.0,
+      "gt_total_kWh": 15063.888888888887,
+      "gt_savings_pct": 1.435841512177407,
+      "gt_delta_kWh": -219.44444444444707,
+      "gt_discomfort_h": 2348.93,
+      "response_surface_top5": [
+        {
+          "pos": 3,
+          "tm": 26.0,
+          "total_kWh": 15063.888888888887,
+          "pct_savings": 1.435841512177407,
+          "delta_kWh": -219.44444444444707,
+          "latent_utilization": 0.9996575342465753,
+          "discomfort_hours": 2348.93
+        },
+        {
+          "pos": 3,
+          "tm": 28.0,
+          "total_kWh": 15077.777777777777,
+          "pct_savings": 1.3449654671028783,
+          "delta_kWh": -205.55555555555657,
+          "latent_utilization": 0.9947488584474886,
+          "discomfort_hours": 2340.15
+        },
+        {
+          "pos": 4,
+          "tm": 24.0,
+          "total_kWh": 15077.777777777777,
+          "pct_savings": 1.3449654671028783,
+          "delta_kWh": -205.55555555555657,
+          "latent_utilization": 0.9408675799086758,
+          "discomfort_hours": 2385.0
+        },
+        {
+          "pos": 3,
+          "tm": 12.0,
+          "total_kWh": 15083.333333333332,
+          "pct_savings": 1.3086150490730761,
+          "delta_kWh": -200.00000000000182,
+          "latent_utilization": 0.0,
+          "discomfort_hours": 2374.25
+        },
+        {
+          "pos": 3,
+          "tm": 14.0,
+          "total_kWh": 15083.333333333332,
+          "pct_savings": 1.3086150490730761,
+          "delta_kWh": -200.00000000000182,
+          "latent_utilization": 0.00011415525114155251,
+          "discomfort_hours": 2374.25
+        }
+      ],
+      "grid_row_count": 55,
+      "worst_total_kWh": 15172.22222222222
+    }
+  }
+]

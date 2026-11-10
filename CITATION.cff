@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "BM-RAG: a multi-agent hybrid RAG system for placing phase change materials in building walls"
+type: software
+authors:
+  - family-names: Zhou
+    given-names: Sixu
+license: MIT
+keywords:
+  - retrieval-augmented generation
+  - knowledge graph
+  - multi-agent
+  - phase change materials
+  - building energy

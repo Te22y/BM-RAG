@@ -1,0 +1,109 @@
+{
+ "cities": {
+  "beijing": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "prompt_sha256": "2c37420542295862f25d063e8954c84447ebaab20729806f833d10f245803b00",
+     "prompt_chars": 832
+    },
+    {
+     "model": "gpt-5",
+     "prompt_sha256": "6a29de5febf6898e5ae671d94583480ed39330ac0b440d36f2c46200fdec457a",
+     "prompt_chars": 94030
+    }
+   ],
+   "stages": [
+    {
+     "stage": "kg_cases",
+     "n_climate": 5,
+     "n_mechanism": 2,
+     "n_union": 7,
+     "fallback": true,
+     "rewritten": "rewritten synthetic query"
+    },
+    {
+     "stage": "kg_rules",
+     "n_climate": 3,
+     "n_mechanism": 3,
+     "n_objective": 2,
+     "n_union": 8
+    },
+    {
+     "stage": "neo4j_cases_by_climate",
+     "n": 1
+    }
+   ]
+  },
+  "chicago": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "prompt_sha256": "360ecb2b5681fbcb7da17e2c59dbdc38802b60dc9330bd50999dcfedb4c67bf7",
+     "prompt_chars": 844
+    },
+    {
+     "model": "gpt-5",
+     "prompt_sha256": "2de2b3ebd8549a3d2c5e0f79fac3bdaba83626a1dc5afd4e07b153091e548ee4",
+     "prompt_chars": 95199
+    }
+   ],
+   "stages": [
+    {
+     "stage": "kg_cases",
+     "n_climate": 5,
+     "n_mechanism": 2,
+     "n_union": 7,
+     "fallback": true,
+     "rewritten": "rewritten synthetic query"
+    },
+    {
+     "stage": "kg_rules",
+     "n_climate": 3,
+     "n_mechanism": 3,
+     "n_objective": 2,
+     "n_union": 8
+    },
+    {
+     "stage": "neo4j_cases_by_climate",
+     "n": 1
+    }
+   ]
+  },
+  "sandiego": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "prompt_sha256": "a152ac5d0aa76531102a60dc48097cdc1f0f5faf22910d49aac5dcb515afb772",
+     "prompt_chars": 836
+    },
+    {
+     "model": "gpt-5",
+     "prompt_sha256": "23d768d9b38dc6618f599e1b3c47b6796cabdf0da3bace343bd69d7646b17d70",
+     "prompt_chars": 94365
+    }
+   ],
+   "stages": [
+    {
+     "stage": "kg_cases",
+     "n_climate": 5,
+     "n_mechanism": 2,
+     "n_union": 7,
+     "fallback": true,
+     "rewritten": "rewritten synthetic query"
+    },
+    {
+     "stage": "kg_rules",
+     "n_climate": 3,
+     "n_mechanism": 3,
+     "n_objective": 2,
+     "n_union": 8
+    },
+    {
+     "stage": "neo4j_cases_by_climate",
+     "n": 1
+    }
+   ]
+  }
+ }
+}

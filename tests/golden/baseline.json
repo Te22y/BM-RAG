@@ -1,0 +1,3766 @@
+{
+ "source_commit": "2514c33",
+ "constants": {
+  "texts": {
+   "analyst": "41e275080627dfa30a4aa8a3b9323169b73c37b212741edf410a1a516296a303",
+   "reasoner": "35819d787cf15de2ae056794aa61307e260b77b4cfdfb48ba55014aff76a118f",
+   "case_query_rewrite": "24b3f22a9fea119f61fc83c98a657df3b5514ade23c77f0120b21c2755879dfa",
+   "paper_query": "2a50743b1f8347e67918701982e3723ae4151b38a397fe595d5bff4f2af74e94",
+   "paper_rerank": "d1e76464384ca6c5756654e47a5abe037cbd7257211a1dc933f44d034b11b1b4",
+   "ablation_task_spec": "9217e2f7a470d4a14a1a5dc78ebd44f3514417f452ebcbbb153075784205a4c2",
+   "ablation_only_llm": "86ace03559470801069f585700954c0ffba317e4094681e4999480318234e34f",
+   "ablation_naive_rag": "6fde086dd324566f1285e59ce5b506daa56ced3685dcb4c5a12b073005f98e19",
+   "ablation_graph_rag": "49bb5fa96322365a63789432be7276bcd883485d8587791bf72b4196dc9051b6",
+   "position_semantics": "345e8cc98398441fd8a71bb05f40502937ab4ebac431d375808f2ca021ea0750",
+   "mechanism_case_query": "fc9bc9b2fed9b27f9dc65c722646c6be8bf0258643d3aac46245e3db12146ded",
+   "mechanism_rule_query": "2d847bf43685d046b6a9807e2c262b169420f17e8f1312c3fc71fd26331c3e61"
+  },
+  "cypher": {
+   "cases_by_climate": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+   "rules_by_climate_objective": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+   "cases_by_wall_materials": "d01dd96fe2349f1119a00b791c5b32bcca1597db2f07bb857210dee46cca36d1",
+   "cases_by_pcm_and_climate": "fac6a4a377ac96c9158114e92ff018e51b9337b20d1d89e4fc1b1363f139793e",
+   "verify_case_evidence": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2"
+  },
+  "template_defaults": {
+   "cases_by_climate": {
+    "limit": 20
+   },
+   "rules_by_climate_objective": {
+    "climate_kw": null,
+    "objective_kw": null,
+    "limit": 10
+   },
+   "cases_by_wall_materials": {
+    "min_overlap": 2,
+    "limit": 20
+   },
+   "cases_by_pcm_and_climate": {
+    "climate_kw": null,
+    "limit": 20
+   },
+   "verify_case_evidence": {}
+  }
+ },
+ "scoring": {
+  "lookup": {
+   "baseline_total_kWh": 1000.0,
+   "zone": "cold",
+   "gt_pos": 4,
+   "gt_tm": 18.0,
+   "gt_total_kWh": 900.0,
+   "gt_savings_pct": 10.0,
+   "tied_tm_set": [
+    18.0,
+    20.0
+   ],
+   "grid": {
+    "4/18.0": {
+     "total_kWh": 900.0,
+     "pct_savings": 10.0,
+     "baseline_delta_kWh": 100.0,
+     "discomfort_hours": 5.0,
+     "latent_utilization": 0.5
+    },
+    "4/20.0": {
+     "total_kWh": 900.005,
+     "pct_savings": 9.99,
+     "baseline_delta_kWh": 99.0,
+     "discomfort_hours": 5.0,
+     "latent_utilization": 0.5
+    },
+    "3/26.0": {
+     "total_kWh": 950.0,
+     "pct_savings": 5.0,
+     "baseline_delta_kWh": 50.0,
+     "discomfort_hours": 7.0,
+     "latent_utilization": null
+    },
+    "0/32.0": {
+     "total_kWh": 990.0,
+     "pct_savings": 1.0,
+     "baseline_delta_kWh": 10.0,
+     "discomfort_hours": null,
+     "latent_utilization": 0.1
+    }
+   }
+  },
+  "scored": [
+   {
+    "status": "ok",
+    "raw_pos": 4,
+    "raw_tm": 18.0,
+    "used_pos": 4,
+    "used_tm": 18.0,
+    "snapped": false,
+    "gt_pos": 4,
+    "gt_tm": 18.0,
+    "tied_tm_set": [
+     18.0,
+     20.0
+    ],
+    "tied_tm_set_size": 2,
+    "e_pred_kWh": 900.0,
+    "e_gt_kWh": 900.0,
+    "energy_gap_kWh": 0.0,
+    "savings_pct_pred": 10.0,
+    "savings_pct_gt": 10.0,
+    "savings_capture": 1.0,
+    "capture_loss": 0.0,
+    "is_acceptable": true,
+    "exact_pos_hit": true,
+    "near_pos_hit": true,
+    "tm_hit_2c": true,
+    "tm_hit_4c": true,
+    "pos_dist": 0,
+    "tm_dist": 0.0,
+    "joint_strict": true,
+    "joint_loose": true
+   },
+   {
+    "status": "ok",
+    "raw_pos": 4,
+    "raw_tm": 19.0,
+    "used_pos": 4,
+    "used_tm": 18,
+    "snapped": true,
+    "gt_pos": 4,
+    "gt_tm": 18.0,
+    "tied_tm_set": [
+     18.0,
+     20.0
+    ],
+    "tied_tm_set_size": 2,
+    "e_pred_kWh": 900.0,
+    "e_gt_kWh": 900.0,
+    "energy_gap_kWh": 0.0,
+    "savings_pct_pred": 10.0,
+    "savings_pct_gt": 10.0,
+    "savings_capture": 1.0,
+    "capture_loss": 0.0,
+    "is_acceptable": true,
+    "exact_pos_hit": true,
+    "near_pos_hit": true,
+    "tm_hit_2c": true,
+    "tm_hit_4c": true,
+    "pos_dist": 0,
+    "tm_dist": 0.0,
+    "joint_strict": true,
+    "joint_loose": true
+   },
+   {
+    "status": "ok",
+    "raw_pos": 3,
+    "raw_tm": 26.0,
+    "used_pos": 3,
+    "used_tm": 26.0,
+    "snapped": false,
+    "gt_pos": 4,
+    "gt_tm": 18.0,
+    "tied_tm_set": [
+     18.0,
+     20.0
+    ],
+    "tied_tm_set_size": 2,
+    "e_pred_kWh": 950.0,
+    "e_gt_kWh": 900.0,
+    "energy_gap_kWh": 50.0,
+    "savings_pct_pred": 5.0,
+    "savings_pct_gt": 10.0,
+    "savings_capture": 0.5,
+    "capture_loss": 0.5,
+    "is_acceptable": false,
+    "exact_pos_hit": false,
+    "near_pos_hit": true,
+    "tm_hit_2c": false,
+    "tm_hit_4c": false,
+    "pos_dist": 1,
+    "tm_dist": 6.0,
+    "joint_strict": false,
+    "joint_loose": false
+   },
+   {
+    "status": "ok",
+    "raw_pos": 0,
+    "raw_tm": 32.0,
+    "used_pos": 0,
+    "used_tm": 32.0,
+    "snapped": false,
+    "gt_pos": 4,
+    "gt_tm": 18.0,
+    "tied_tm_set": [
+     18.0,
+     20.0
+    ],
+    "tied_tm_set_size": 2,
+    "e_pred_kWh": 990.0,
+    "e_gt_kWh": 900.0,
+    "energy_gap_kWh": 90.0,
+    "savings_pct_pred": 1.0,
+    "savings_pct_gt": 10.0,
+    "savings_capture": 0.1,
+    "capture_loss": 0.9,
+    "is_acceptable": false,
+    "exact_pos_hit": false,
+    "near_pos_hit": false,
+    "tm_hit_2c": false,
+    "tm_hit_4c": false,
+    "pos_dist": 4,
+    "tm_dist": 12.0,
+    "joint_strict": false,
+    "joint_loose": false
+   },
+   {
+    "status": "missing_pos",
+    "raw_pos": null,
+    "raw_tm": 20.0,
+    "gt_pos": 4,
+    "gt_tm": 18.0
+   },
+   {
+    "status": "missing_tm",
+    "raw_pos": 4,
+    "raw_tm": null,
+    "gt_pos": 4,
+    "gt_tm": 18.0
+   },
+   {
+    "status": "missing_pos",
+    "raw_pos": 9,
+    "raw_tm": 20.0,
+    "gt_pos": 4,
+    "gt_tm": 18.0
+   },
+   {
+    "status": "lookup_miss",
+    "raw_pos": 2,
+    "raw_tm": 14.0,
+    "gt_pos": 4,
+    "gt_tm": 18.0
+   }
+  ]
+ },
+ "pipeline": {
+  "pass_first_attempt": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "e4086cdd6386d4c8a97c8c4cdad3e0d0603ba2a5f1810693a7f5a5eca216e2a0",
+     "prompt_chars": 27220
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 4",
+       "pcm_interface_pos": 4,
+       "pcm_tm_c": 20.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_0",
+        "rule_syn_0"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 5,
+          "n_mechanism": 2,
+          "n_union": 7,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 3,
+          "n_mechanism": 3,
+          "n_objective": 2,
+          "n_union": 8
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "pass",
+       "fatal_issues": [],
+       "soft_issues": [],
+       "evidence_audit": {
+        "case_syn_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        },
+        "rule_syn_0": {
+         "exists": true,
+         "rule_relation": "FAVORS",
+         "subject": "subject 0",
+         "object": "interior",
+         "condition": "synthetic",
+         "evidence_sentence": "Synthetic sentence 0."
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 1.0,
+       "retry_hint": null
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 4",
+     "pcm_interface_pos": 4,
+     "pcm_tm_c": 20.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0"
+     ],
+     "alternatives": []
+    },
+    "verdict": "pass"
+   }
+  },
+  "soft_retry_exhausted": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "e4086cdd6386d4c8a97c8c4cdad3e0d0603ba2a5f1810693a7f5a5eca216e2a0",
+     "prompt_chars": 27220
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "4ba30aae6b2295b4d122f18ac4dc397f404e6a324e469eaf9043c50e06666361",
+     "prompt_chars": 33692
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "7a251e4b402fb8c9a4f7fde34cbfe0e1c7a2afc95d2b4096a57efbcccc4d3700",
+     "prompt_chars": 33693
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0"
+      ]
+     }
+    },
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_1"
+      ]
+     }
+    },
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_1"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 6
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 3
+    },
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 6
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 3
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 3",
+       "pcm_interface_pos": 3,
+       "pcm_tm_c": 26.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_0"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 5,
+          "n_mechanism": 2,
+          "n_union": 7,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 3,
+          "n_mechanism": 3,
+          "n_objective": 2,
+          "n_union": 8
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "retry",
+       "fatal_issues": [],
+       "soft_issues": [
+        "Cycling-feasibility (pos3): chosen Tm=26.0°C needs interface to cross both 24.0°C and 28.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+       ],
+       "evidence_audit": {
+        "case_syn_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 0.5,
+       "retry_hint": "Cycling-feasibility flags (the chosen Tm may not fully cycle at the chosen position given the indoor envelope):\n  - Cycling-feasibility (pos3): chosen Tm=26.0°C needs interface to cross both 24.0°C and 28.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band.\n\nEither revise (pos, Tm) so the interface envelope spans both Tm - band/2 and Tm + band/2, or explicitly justify in joint_rationale why this constraint is overridden by other physics (e.g. solar gain, thermal mass, intermittent operation extending the envelope)."
+      }
+     },
+     {
+      "attempt": 2,
+      "reasoner": {
+       "position": "synthetic position 3",
+       "pcm_interface_pos": 3,
+       "pcm_tm_c": 24.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_1"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 6,
+          "n_mechanism": 3,
+          "n_union": 9,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 4,
+          "n_mechanism": 4,
+          "n_objective": 3,
+          "n_union": 11
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "retry",
+       "fatal_issues": [],
+       "soft_issues": [
+        "Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+       ],
+       "evidence_audit": {
+        "case_syn_1": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 0.5,
+       "retry_hint": "Cycling-feasibility flags (the chosen Tm may not fully cycle at the chosen position given the indoor envelope):\n  - Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band.\n\nEither revise (pos, Tm) so the interface envelope spans both Tm - band/2 and Tm + band/2, or explicitly justify in joint_rationale why this constraint is overridden by other physics (e.g. solar gain, thermal mass, intermittent operation extending the envelope)."
+      }
+     },
+     {
+      "attempt": 3,
+      "reasoner": {
+       "position": "synthetic position 3",
+       "pcm_interface_pos": 3,
+       "pcm_tm_c": 24.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_1"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 6,
+          "n_mechanism": 3,
+          "n_union": 9,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 4,
+          "n_mechanism": 4,
+          "n_objective": 3,
+          "n_union": 11
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "retry",
+       "fatal_issues": [],
+       "soft_issues": [
+        "Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+       ],
+       "evidence_audit": {
+        "case_syn_1": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 0.5,
+       "retry_hint": "Cycling-feasibility flags (the chosen Tm may not fully cycle at the chosen position given the indoor envelope):\n  - Cycling-feasibility (pos3): chosen Tm=24.0°C needs interface to cross both 22.0°C and 26.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band.\n\nEither revise (pos, Tm) so the interface envelope spans both Tm - band/2 and Tm + band/2, or explicitly justify in joint_rationale why this constraint is overridden by other physics (e.g. solar gain, thermal mass, intermittent operation extending the envelope)."
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 3",
+     "pcm_interface_pos": 3,
+     "pcm_tm_c": 24.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "case_syn_1"
+     ],
+     "alternatives": []
+    },
+    "verdict": "retry"
+   }
+  },
+  "fatal_then_pass": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "e4086cdd6386d4c8a97c8c4cdad3e0d0603ba2a5f1810693a7f5a5eca216e2a0",
+     "prompt_chars": 27220
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "f8cc571521d544be45eba3043e77361a664309e5b8944b2d9ef57b454ec32682",
+     "prompt_chars": 33461
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_missing"
+      ]
+     }
+    },
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 6
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 4
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 3
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 4",
+       "pcm_interface_pos": 4,
+       "pcm_tm_c": 20.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_missing"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 5,
+          "n_mechanism": 2,
+          "n_union": 7,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 3,
+          "n_mechanism": 3,
+          "n_objective": 2,
+          "n_union": 8
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "retry",
+       "fatal_issues": [
+        "Cited evidence [case_missing] does not exist in the KG / rule store."
+       ],
+       "soft_issues": [],
+       "evidence_audit": {
+        "case_missing": {
+         "exists": false
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 0.0,
+       "retry_hint": "Citation / grid / contradiction issues:\n  - Cited evidence [case_missing] does not exist in the KG / rule store.\n\nRe-run with stricter citation discipline: cite only evidence_ids that appear in the bundle, ensure pcm_interface_pos ∈ {0..4} and pcm_tm_c ∈ {12,14,...,32}, and ensure your claimed position is consistent with the cited cases' favored_positions."
+      }
+     },
+     {
+      "attempt": 2,
+      "reasoner": {
+       "position": "synthetic position 4",
+       "pcm_interface_pos": 4,
+       "pcm_tm_c": 20.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_0"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 6,
+          "n_mechanism": 3,
+          "n_union": 9,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 4,
+          "n_mechanism": 4,
+          "n_objective": 3,
+          "n_union": 11
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "pass",
+       "fatal_issues": [],
+       "soft_issues": [],
+       "evidence_audit": {
+        "case_syn_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 1.0,
+       "retry_hint": null
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 4",
+     "pcm_interface_pos": 4,
+     "pcm_tm_c": 20.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "case_syn_0"
+     ],
+     "alternatives": []
+    },
+    "verdict": "pass"
+   }
+  },
+  "rewrite_and_all_stages": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "7d805fb0b568cd215784faddb9d8aeeccecdb744afe529c610c69baa018ae14c",
+     "prompt_chars": 660
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "03bd4d4c54ed82b375a7ef2b3e42264813b8a13e1a76df95bdb5d4b48b2244ce",
+     "prompt_chars": 21964
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0",
+       "cases_by_climate_row_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "rewritten synthetic query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 4",
+       "pcm_interface_pos": 4,
+       "pcm_tm_c": 22.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_0",
+        "rule_syn_0",
+        "abcdef0123456789__text__0001",
+        "cases_by_climate_row_0",
+        "R11"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 5,
+          "n_mechanism": 2,
+          "n_union": 7,
+          "fallback": true,
+          "rewritten": "rewritten synthetic query"
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 1,
+          "n_mechanism": 1,
+          "n_objective": 1,
+          "n_union": 1
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "neo4j_rules_by_objective",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 3,
+          "query": "synthetic pcm query"
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "pass",
+       "fatal_issues": [],
+       "soft_issues": [],
+       "evidence_audit": {
+        "case_syn_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        },
+        "cases_by_climate_row_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        },
+        "rule_syn_0": {
+         "exists": true,
+         "rule_relation": "FAVORS",
+         "subject": "subject 0",
+         "object": "interior",
+         "condition": "synthetic",
+         "evidence_sentence": "Synthetic sentence 0."
+        },
+        "abcdef0123456789__text__0001": {
+         "exists": true,
+         "kind": "paper_chunk",
+         "note": "no KG store; trust unless retrieval logged otherwise"
+        },
+        "R11": {
+         "exists": false,
+         "kind": "unknown_format",
+         "note": "id does not match any known store pattern"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 1.0,
+       "retry_hint": null
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 4",
+     "pcm_interface_pos": 4,
+     "pcm_tm_c": 22.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ],
+     "alternatives": []
+    },
+    "verdict": "pass"
+   }
+  },
+  "paper_only": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "fe4b969fcd84490735e0be9b09f69c3592d813d2da4301968ec2c50b6144f540",
+     "prompt_chars": 13019
+    }
+   ],
+   "graph_calls": [],
+   "searches": [
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 4",
+       "pcm_interface_pos": 4,
+       "pcm_tm_c": 18.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "abcdef0123456789__text__0001"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "paper_chunks",
+          "n": 3,
+          "query": "synthetic pcm query"
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "pass",
+       "fatal_issues": [],
+       "soft_issues": [],
+       "evidence_audit": {
+        "abcdef0123456789__text__0001": {
+         "exists": true,
+         "kind": "paper_chunk",
+         "note": "no KG store; trust unless retrieval logged otherwise"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 1.0,
+       "retry_hint": null
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 4",
+     "pcm_interface_pos": 4,
+     "pcm_tm_c": 18.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "abcdef0123456789__text__0001"
+     ],
+     "alternatives": []
+    },
+    "verdict": "pass"
+   }
+  },
+  "off_grid_no_retries": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "e4086cdd6386d4c8a97c8c4cdad3e0d0603ba2a5f1810693a7f5a5eca216e2a0",
+     "prompt_chars": 27220
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    }
+   ],
+   "result": {
+    "user_input": {
+     "climate": "testville",
+     "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+     "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+     "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+     "goal": "minimize total annual energy",
+     "orientation": null,
+     "season": null,
+     "optimization_target": "min_total_energy"
+    },
+    "analyst": {
+     "raw_input": {
+      "climate": "testville",
+      "building_type": "small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.",
+      "wall_construction": "stucco | gypsum | insulation R=1.07 | gypsum",
+      "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C",
+      "goal": "minimize total annual energy",
+      "orientation": null,
+      "season": null,
+      "optimization_target": "min_total_energy"
+     },
+     "climate_query": "synthetic climate query",
+     "construction_query": "synthetic construction query",
+     "pcm_query": "synthetic pcm query",
+     "composite_query": "synthetic composite query",
+     "materials": [
+      "stucco",
+      "gypsum"
+     ],
+     "objective_kw": "energy saving",
+     "climate_kw": "testville",
+     "pcm_tm_c": null,
+     "pcm_thickness_mm": 20,
+     "wall_layer_count": 4,
+     "notes": [
+      "synthetic note"
+     ]
+    },
+    "reasoner_attempts": [
+     {
+      "attempt": 1,
+      "reasoner": {
+       "position": "synthetic position 7",
+       "pcm_interface_pos": 7,
+       "pcm_tm_c": 21.0,
+       "tm_reasoning": [
+        "synthetic Tm step"
+       ],
+       "joint_rationale": "synthetic rationale",
+       "reasoning_chain": [
+        "synthetic step"
+       ],
+       "evidence_ids": [
+        "case_syn_0"
+       ],
+       "confidence": 0.5,
+       "alternatives": [],
+       "diagnostics": {
+        "stages": [
+         {
+          "stage": "kg_cases",
+          "n_climate": 5,
+          "n_mechanism": 2,
+          "n_union": 7,
+          "fallback": false,
+          "rewritten": null
+         },
+         {
+          "stage": "kg_rules",
+          "n_climate": 3,
+          "n_mechanism": 3,
+          "n_objective": 2,
+          "n_union": 8
+         },
+         {
+          "stage": "neo4j_cases_by_climate",
+          "n": 1
+         },
+         {
+          "stage": "paper_chunks",
+          "n": 0,
+          "skipped": true
+         }
+        ]
+       }
+      },
+      "judge": {
+       "verdict": "retry",
+       "fatal_issues": [
+        "pcm_interface_pos=7 is off-grid; must be one of [0, 1, 2, 3, 4].",
+        "pcm_tm_c=21.0 is off-grid; must be one of [12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32] (°C, step 2)."
+       ],
+       "soft_issues": [
+        "Cycling-feasibility (pos7): chosen Tm=21.0°C needs interface to cross both 19.0°C and 23.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band."
+       ],
+       "evidence_audit": {
+        "case_syn_0": {
+         "exists": true,
+         "favored_positions": [
+          "interior side of the wall"
+         ],
+         "tested_positions": [
+          "exterior",
+          "interior"
+         ],
+         "climate": "synthetic climate"
+        }
+       },
+       "rubric_scores": {},
+       "overall_score": 0.0,
+       "retry_hint": "Citation / grid / contradiction issues:\n  - pcm_interface_pos=7 is off-grid; must be one of [0, 1, 2, 3, 4].\n  - pcm_tm_c=21.0 is off-grid; must be one of [12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32] (°C, step 2).\n\nRe-run with stricter citation discipline: cite only evidence_ids that appear in the bundle, ensure pcm_interface_pos ∈ {0..4} and pcm_tm_c ∈ {12,14,...,32}, and ensure your claimed position is consistent with the cited cases' favored_positions.\n\nALSO cycling-feasibility flags:\n  - Cycling-feasibility (pos7): chosen Tm=21.0°C needs interface to cross both 19.0°C and 23.0°C within 24 h. Confirm in the joint_rationale that the climate's diurnal range at this position actually spans this band.\nPick a (pos, Tm) that respects these, or explicitly justify in joint_rationale why your choice still cycles."
+      }
+     }
+    ],
+    "final_prediction": {
+     "position": "synthetic position 7",
+     "pcm_interface_pos": 7,
+     "pcm_tm_c": 21.0,
+     "tm_reasoning": [
+      "synthetic Tm step"
+     ],
+     "joint_rationale": "synthetic rationale",
+     "confidence": 0.5,
+     "reasoning_chain": [
+      "synthetic step"
+     ],
+     "evidence_ids": [
+      "case_syn_0"
+     ],
+     "alternatives": []
+    },
+    "verdict": "retry"
+   }
+  }
+ },
+ "events": {
+  "pass_first_attempt": [
+   {
+    "i": 1,
+    "kind": "agent_start",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 2,
+    "kind": "agent_end",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 3,
+    "kind": "agent_start",
+    "agent": "reasoner",
+    "attempt": 1
+   },
+   {
+    "i": 4,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases_with_fallback",
+    "query": "synthetic composite query",
+    "top_k": 5,
+    "n": 5,
+    "ids": [
+     "case_syn_24",
+     "case_syn_25",
+     "case_syn_26",
+     "case_syn_27",
+     "case_syn_28"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57
+    ],
+    "fallback_used": false,
+    "fallback_reason": null,
+    "rewritten_query": null,
+    "scores_before": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases",
+    "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+    "top_k": 2,
+    "n": 2,
+    "ids": [
+     "case_syn_5",
+     "case_syn_6"
+    ],
+    "scores": [
+     0.65,
+     0.63
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM optimal position synthetic climate query",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_32",
+     "rule_syn_33",
+     "rule_syn_34"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_17",
+     "rule_syn_18",
+     "rule_syn_19"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM placement wall layer energy reduction",
+    "top_k": 2,
+    "n": 2,
+    "ids": [
+     "rule_syn_4",
+     "rule_syn_5"
+    ],
+    "scores": [
+     0.65,
+     0.63
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "neo4j_template",
+    "template": "cases_by_climate",
+    "params": {
+     "climate_kw": "testville",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "agent_end",
+    "agent": "reasoner",
+    "attempt": 1,
+    "pos": 4,
+    "tm": 20.0,
+    "confidence": 0.5
+   },
+   {
+    "i": 11,
+    "kind": "agent_start",
+    "agent": "judge",
+    "attempt": 1
+   },
+   {
+    "i": 12,
+    "kind": "retrieval",
+    "agent": "judge",
+    "attempt": 1,
+    "fn": "judge.neo4j_template",
+    "template": "verify_case_evidence",
+    "params": {
+     "n_case_ids": 1
+    },
+    "n": 1,
+    "ids": [
+     "case_syn_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 13,
+    "kind": "agent_end",
+    "agent": "judge",
+    "attempt": 1,
+    "verdict": "pass",
+    "n_fatal": 0,
+    "n_soft": 0
+   }
+  ],
+  "soft_retry_exhausted": [
+   {
+    "i": 1,
+    "kind": "agent_start",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 2,
+    "kind": "agent_end",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 3,
+    "kind": "agent_start",
+    "agent": "reasoner",
+    "attempt": 1
+   },
+   {
+    "i": 4,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases_with_fallback",
+    "query": "synthetic composite query",
+    "top_k": 5,
+    "n": 5,
+    "ids": [
+     "case_syn_24",
+     "case_syn_25",
+     "case_syn_26",
+     "case_syn_27",
+     "case_syn_28"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57
+    ],
+    "fallback_used": false,
+    "fallback_reason": null,
+    "rewritten_query": null,
+    "scores_before": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases",
+    "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+    "top_k": 2,
+    "n": 2,
+    "ids": [
+     "case_syn_5",
+     "case_syn_6"
+    ],
+    "scores": [
+     0.65,
+     0.63
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM optimal position synthetic climate query",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_32",
+     "rule_syn_33",
+     "rule_syn_34"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_17",
+     "rule_syn_18",
+     "rule_syn_19"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM placement wall layer energy reduction",
+    "top_k": 2,
+    "n": 2,
+    "ids": [
+     "rule_syn_4",
+     "rule_syn_5"
+    ],
+    "scores": [
+     0.65,
+     0.63
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "neo4j_template",
+    "template": "cases_by_climate",
+    "params": {
+     "climate_kw": "testville",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "agent_end",
+    "agent": "reasoner",
+    "attempt": 1,
+    "pos": 3,
+    "tm": 26.0,
+    "confidence": 0.5
+   },
+   {
+    "i": 11,
+    "kind": "agent_start",
+    "agent": "judge",
+    "attempt": 1
+   },
+   {
+    "i": 12,
+    "kind": "retrieval",
+    "agent": "judge",
+    "attempt": 1,
+    "fn": "judge.neo4j_template",
+    "template": "verify_case_evidence",
+    "params": {
+     "n_case_ids": 1
+    },
+    "n": 1,
+    "ids": [
+     "case_syn_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 13,
+    "kind": "agent_end",
+    "agent": "judge",
+    "attempt": 1,
+    "verdict": "retry",
+    "n_fatal": 0,
+    "n_soft": 1
+   },
+   {
+    "i": 14,
+    "kind": "agent_start",
+    "agent": "reasoner",
+    "attempt": 2
+   },
+   {
+    "i": 15,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "retrieve_cases_with_fallback",
+    "query": "synthetic composite query",
+    "top_k": 6,
+    "n": 6,
+    "ids": [
+     "case_syn_24",
+     "case_syn_25",
+     "case_syn_26",
+     "case_syn_27",
+     "case_syn_28",
+     "case_syn_29"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57,
+     0.55
+    ],
+    "fallback_used": false,
+    "fallback_reason": null,
+    "rewritten_query": null,
+    "scores_before": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57,
+     0.55
+    ]
+   },
+   {
+    "i": 16,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "retrieve_cases",
+    "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "case_syn_5",
+     "case_syn_6",
+     "case_syn_7"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 17,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM optimal position synthetic climate query",
+    "top_k": 4,
+    "n": 4,
+    "ids": [
+     "rule_syn_32",
+     "rule_syn_33",
+     "rule_syn_34",
+     "rule_syn_35"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59
+    ]
+   },
+   {
+    "i": 18,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "retrieve_rules",
+    "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+    "top_k": 4,
+    "n": 4,
+    "ids": [
+     "rule_syn_17",
+     "rule_syn_18",
+     "rule_syn_19",
+     "rule_syn_20"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59
+    ]
+   },
+   {
+    "i": 19,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM placement wall layer energy reduction",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_4",
+     "rule_syn_5",
+     "rule_syn_6"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 20,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 2,
+    "fn": "neo4j_template",
+    "template": "cases_by_climate",
+    "params": {
+     "climate_kw": "testville",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 21,
+    "kind": "agent_end",
+    "agent": "reasoner",
+    "attempt": 2,
+    "pos": 3,
+    "tm": 24.0,
+    "confidence": 0.5
+   },
+   {
+    "i": 22,
+    "kind": "agent_start",
+    "agent": "judge",
+    "attempt": 2
+   },
+   {
+    "i": 23,
+    "kind": "retrieval",
+    "agent": "judge",
+    "attempt": 2,
+    "fn": "judge.neo4j_template",
+    "template": "verify_case_evidence",
+    "params": {
+     "n_case_ids": 1
+    },
+    "n": 1,
+    "ids": [
+     "case_syn_1"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 24,
+    "kind": "agent_end",
+    "agent": "judge",
+    "attempt": 2,
+    "verdict": "retry",
+    "n_fatal": 0,
+    "n_soft": 1
+   },
+   {
+    "i": 25,
+    "kind": "agent_start",
+    "agent": "reasoner",
+    "attempt": 3
+   },
+   {
+    "i": 26,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "retrieve_cases_with_fallback",
+    "query": "synthetic composite query",
+    "top_k": 6,
+    "n": 6,
+    "ids": [
+     "case_syn_24",
+     "case_syn_25",
+     "case_syn_26",
+     "case_syn_27",
+     "case_syn_28",
+     "case_syn_29"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57,
+     0.55
+    ],
+    "fallback_used": false,
+    "fallback_reason": null,
+    "rewritten_query": null,
+    "scores_before": [
+     0.65,
+     0.63,
+     0.61,
+     0.59,
+     0.57,
+     0.55
+    ]
+   },
+   {
+    "i": 27,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "retrieve_cases",
+    "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "case_syn_5",
+     "case_syn_6",
+     "case_syn_7"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 28,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM optimal position synthetic climate query",
+    "top_k": 4,
+    "n": 4,
+    "ids": [
+     "rule_syn_32",
+     "rule_syn_33",
+     "rule_syn_34",
+     "rule_syn_35"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59
+    ]
+   },
+   {
+    "i": 29,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "retrieve_rules",
+    "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+    "top_k": 4,
+    "n": 4,
+    "ids": [
+     "rule_syn_17",
+     "rule_syn_18",
+     "rule_syn_19",
+     "rule_syn_20"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61,
+     0.59
+    ]
+   },
+   {
+    "i": 30,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM placement wall layer energy reduction",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "rule_syn_4",
+     "rule_syn_5",
+     "rule_syn_6"
+    ],
+    "scores": [
+     0.65,
+     0.63,
+     0.61
+    ]
+   },
+   {
+    "i": 31,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 3,
+    "fn": "neo4j_template",
+    "template": "cases_by_climate",
+    "params": {
+     "climate_kw": "testville",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 32,
+    "kind": "agent_end",
+    "agent": "reasoner",
+    "attempt": 3,
+    "pos": 3,
+    "tm": 24.0,
+    "confidence": 0.5
+   },
+   {
+    "i": 33,
+    "kind": "agent_start",
+    "agent": "judge",
+    "attempt": 3
+   },
+   {
+    "i": 34,
+    "kind": "retrieval",
+    "agent": "judge",
+    "attempt": 3,
+    "fn": "judge.neo4j_template",
+    "template": "verify_case_evidence",
+    "params": {
+     "n_case_ids": 1
+    },
+    "n": 1,
+    "ids": [
+     "case_syn_1"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 35,
+    "kind": "agent_end",
+    "agent": "judge",
+    "attempt": 3,
+    "verdict": "retry",
+    "n_fatal": 0,
+    "n_soft": 1
+   }
+  ],
+  "rewrite_and_all_stages": [
+   {
+    "i": 1,
+    "kind": "agent_start",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 2,
+    "kind": "agent_end",
+    "agent": "analyst",
+    "attempt": 0
+   },
+   {
+    "i": 3,
+    "kind": "agent_start",
+    "agent": "reasoner",
+    "attempt": 1
+   },
+   {
+    "i": 4,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases_with_fallback",
+    "query": "synthetic composite query",
+    "top_k": 5,
+    "n": 5,
+    "ids": [
+     "case_syn_39",
+     "case_syn_0",
+     "case_syn_1",
+     "case_syn_2",
+     "case_syn_3"
+    ],
+    "scores": [
+     0.65,
+     0.649,
+     0.648,
+     0.647,
+     0.646
+    ],
+    "fallback_used": true,
+    "fallback_reason": {
+     "weak_top1": false,
+     "weak_spread": true
+    },
+    "rewritten_query": "rewritten synthetic query",
+    "scores_before": [
+     0.65,
+     0.649,
+     0.648,
+     0.647,
+     0.646
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_cases",
+    "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+    "top_k": 2,
+    "n": 2,
+    "ids": [
+     "case_syn_5",
+     "case_syn_6"
+    ],
+    "scores": [
+     0.65,
+     0.649
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM optimal position synthetic climate query",
+    "top_k": 3,
+    "n": 1,
+    "ids": [
+     "rule_syn_0"
+    ],
+    "scores": [
+     0.6
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+    "top_k": 3,
+    "n": 1,
+    "ids": [
+     "rule_syn_0"
+    ],
+    "scores": [
+     0.6
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_rules",
+    "query": "energy saving PCM placement wall layer energy reduction",
+    "top_k": 2,
+    "n": 1,
+    "ids": [
+     "rule_syn_0"
+    ],
+    "scores": [
+     0.6
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "neo4j_template",
+    "template": "cases_by_climate",
+    "params": {
+     "climate_kw": "testville",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "neo4j_template",
+    "template": "rules_by_climate_objective",
+    "params": {
+     "climate_kw": "testville",
+     "objective_kw": "energy saving",
+     "limit": 8
+    },
+    "n": 1,
+    "ids": [
+     "rule_syn_5"
+    ],
+    "scores": [
+     null
+    ]
+   },
+   {
+    "i": 11,
+    "kind": "retrieval",
+    "agent": "reasoner",
+    "attempt": 1,
+    "fn": "retrieve_paper_chunks",
+    "query": "synthetic pcm query",
+    "top_k": 3,
+    "n": 3,
+    "ids": [
+     "abcdef0123456789__text__0001",
+     "abcdef0123456789__text__0002",
+     "abcdef0123456789__text__0003"
+    ],
+    "scores": [
+     0.9,
+     0.85,
+     0.8
+    ]
+   },
+   {
+    "i": 12,
+    "kind": "agent_end",
+    "agent": "reasoner",
+    "attempt": 1,
+    "pos": 4,
+    "tm": 22.0,
+    "confidence": 0.5
+   },
+   {
+    "i": 13,
+    "kind": "agent_start",
+    "agent": "judge",
+    "attempt": 1
+   },
+   {
+    "i": 14,
+    "kind": "retrieval",
+    "agent": "judge",
+    "attempt": 1,
+    "fn": "judge.neo4j_template",
+    "template": "verify_case_evidence",
+    "params": {
+     "n_case_ids": 2
+    },
+    "n": 2,
+    "ids": [
+     "case_syn_0",
+     "cases_by_climate_row_0"
+    ],
+    "scores": [
+     null,
+     null
+    ]
+   },
+   {
+    "i": 15,
+    "kind": "agent_end",
+    "agent": "judge",
+    "attempt": 1,
+    "verdict": "pass",
+    "n_fatal": 0,
+    "n_soft": 0
+   }
+  ],
+  "scan": {
+   "events": [
+    {
+     "i": 1,
+     "kind": "agent_start",
+     "agent": "analyst",
+     "attempt": 0
+    },
+    {
+     "i": 2,
+     "kind": "agent_end",
+     "agent": "analyst",
+     "attempt": 0
+    },
+    {
+     "i": 3,
+     "kind": "agent_start",
+     "agent": "reasoner",
+     "attempt": 1
+    },
+    {
+     "i": 4,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "retrieve_cases_with_fallback",
+     "query": "synthetic composite query",
+     "top_k": 5,
+     "n": 5,
+     "ids": [
+      "case_syn_39",
+      "case_syn_0",
+      "case_syn_1",
+      "case_syn_2",
+      "case_syn_3"
+     ],
+     "scores": [
+      0.65,
+      0.649,
+      0.648,
+      0.647,
+      0.646
+     ],
+     "fallback_used": true,
+     "fallback_reason": {
+      "weak_top1": false,
+      "weak_spread": true
+     },
+     "rewritten_query": "rewritten synthetic query",
+     "scores_before": [
+      0.65,
+      0.649,
+      0.648,
+      0.647,
+      0.646
+     ]
+    },
+    {
+     "i": 5,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "retrieve_cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2,
+     "n": 2,
+     "ids": [
+      "case_syn_5",
+      "case_syn_6"
+     ],
+     "scores": [
+      0.65,
+      0.649
+     ]
+    },
+    {
+     "i": 6,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "retrieve_rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 7,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "retrieve_rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 8,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "retrieve_rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 9,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "neo4j_template",
+     "template": "cases_by_climate",
+     "params": {
+      "climate_kw": "testville",
+      "limit": 8
+     },
+     "n": 1,
+     "ids": [
+      "cases_by_climate_row_0"
+     ],
+     "scores": [
+      null
+     ]
+    },
+    {
+     "i": 10,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 1,
+     "fn": "neo4j_template",
+     "template": "rules_by_climate_objective",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     },
+     "n": 1,
+     "ids": [
+      "rule_syn_5"
+     ],
+     "scores": [
+      null
+     ]
+    },
+    {
+     "i": 11,
+     "kind": "paper_chunks_stubbed",
+     "agent": "reasoner",
+     "attempt": 1,
+     "query": "synthetic pcm query",
+     "top_k": 3
+    },
+    {
+     "i": 12,
+     "kind": "reasoner_prompt",
+     "agent": "reasoner",
+     "attempt": 1,
+     "prompt_chars": 21246
+    },
+    {
+     "i": 13,
+     "kind": "agent_end",
+     "agent": "reasoner",
+     "attempt": 1
+    },
+    {
+     "i": 14,
+     "kind": "agent_start",
+     "agent": "reasoner",
+     "attempt": 2
+    },
+    {
+     "i": 15,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "retrieve_cases_with_fallback",
+     "query": "synthetic composite query",
+     "top_k": 6,
+     "n": 6,
+     "ids": [
+      "case_syn_39",
+      "case_syn_0",
+      "case_syn_1",
+      "case_syn_2",
+      "case_syn_3",
+      "case_syn_4"
+     ],
+     "scores": [
+      0.65,
+      0.649,
+      0.648,
+      0.647,
+      0.646,
+      0.645
+     ],
+     "fallback_used": true,
+     "fallback_reason": {
+      "weak_top1": false,
+      "weak_spread": true
+     },
+     "rewritten_query": "rewritten synthetic query",
+     "scores_before": [
+      0.65,
+      0.649,
+      0.648,
+      0.647,
+      0.646,
+      0.645
+     ]
+    },
+    {
+     "i": 16,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "retrieve_cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 3,
+     "n": 3,
+     "ids": [
+      "case_syn_5",
+      "case_syn_6",
+      "case_syn_7"
+     ],
+     "scores": [
+      0.65,
+      0.649,
+      0.648
+     ]
+    },
+    {
+     "i": 17,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "retrieve_rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 4,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 18,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "retrieve_rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 4,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 19,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "retrieve_rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 3,
+     "n": 1,
+     "ids": [
+      "rule_syn_0"
+     ],
+     "scores": [
+      0.6
+     ]
+    },
+    {
+     "i": 20,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "neo4j_template",
+     "template": "cases_by_climate",
+     "params": {
+      "climate_kw": "testville",
+      "limit": 8
+     },
+     "n": 1,
+     "ids": [
+      "cases_by_climate_row_0"
+     ],
+     "scores": [
+      null
+     ]
+    },
+    {
+     "i": 21,
+     "kind": "retrieval",
+     "agent": "reasoner",
+     "attempt": 2,
+     "fn": "neo4j_template",
+     "template": "rules_by_climate_objective",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     },
+     "n": 1,
+     "ids": [
+      "rule_syn_5"
+     ],
+     "scores": [
+      null
+     ]
+    },
+    {
+     "i": 22,
+     "kind": "paper_chunks_stubbed",
+     "agent": "reasoner",
+     "attempt": 2,
+     "query": "synthetic pcm query",
+     "top_k": 3
+    },
+    {
+     "i": 23,
+     "kind": "reasoner_prompt",
+     "agent": "reasoner",
+     "attempt": 2,
+     "prompt_chars": 23344
+    },
+    {
+     "i": 24,
+     "kind": "agent_end",
+     "agent": "reasoner",
+     "attempt": 2
+    }
+   ],
+   "stages_attempt1": {
+    "case_fallback_rewrite": true,
+    "neo4j_climate_n": 1,
+    "neo4j_rules_ran": true,
+    "paper_chunks_ran": true,
+    "reasoner_prompt_chars": 21246
+   },
+   "stages_retry": {
+    "case_fallback_rewrite": true,
+    "neo4j_climate_n": 1,
+    "neo4j_rules_ran": true,
+    "paper_chunks_ran": true,
+    "reasoner_prompt_chars": 23344
+   },
+   "template_check": {
+    "cases_by_climate": 1,
+    "rules_by_climate_objective": 1,
+    "rules_by_climate_only": 1,
+    "cases_by_wall_materials": 1,
+    "cases_by_pcm_and_climate": 1
+   }
+  }
+ },
+ "experiments": {
+  "exp1_bmrag": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "7d805fb0b568cd215784faddb9d8aeeccecdb744afe529c610c69baa018ae14c",
+     "prompt_chars": 660
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "03bd4d4c54ed82b375a7ef2b3e42264813b8a13e1a76df95bdb5d4b48b2244ce",
+     "prompt_chars": 21964
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0",
+       "cases_by_climate_row_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "rewritten synthetic query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 22.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_pipeline": {
+     "verdict": "pass",
+     "attempts": 1,
+     "confidence": 0.5,
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ]
+    }
+   }
+  },
+  "exp2_only_llm_gpt5": {
+   "llm_calls": [
+    {
+     "model": "gpt-5",
+     "temperature": 0.0,
+     "max_retries": null,
+     "prompt_sha256": "3214adc56d809f78df2d4af5987e7833c41cd199f31b6273173cbc7439cd832b",
+     "prompt_chars": 1216
+    }
+   ],
+   "graph_calls": [],
+   "searches": [],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 20.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_llm_output": "{\"pcm_interface_pos\": 4, \"pcm_tm_c\": 20.3, \"rationale\": \"synthetic rationale\"}",
+    "model": "gpt-5"
+   }
+  },
+  "exp2_only_llm_llama70b": {
+   "llm_calls": [
+    {
+     "model": "meta-llama/Llama-3.3-70B-Instruct",
+     "temperature": 0.0,
+     "max_retries": null,
+     "prompt_sha256": "3214adc56d809f78df2d4af5987e7833c41cd199f31b6273173cbc7439cd832b",
+     "prompt_chars": 1216
+    }
+   ],
+   "graph_calls": [],
+   "searches": [],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 20.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_llm_output": "{\"pcm_interface_pos\": 4, \"pcm_tm_c\": 20.3, \"rationale\": \"synthetic rationale\"}",
+    "model": "meta-llama/Llama-3.3-70B-Instruct"
+   }
+  },
+  "exp3_naive_rag": {
+   "llm_calls": [
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "88ae92fa9af48b0e228a7c0a9f8e54b0b56e63e6a9077c62290365b43fc2cea0",
+     "prompt_chars": 2567
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0.0,
+     "max_retries": null,
+     "prompt_sha256": "f77cd47d8ca77b2a34e12be922543179debebe5ad72e1ffa3e0d3f96f7ee6c17",
+     "prompt_chars": 1578
+    }
+   ],
+   "graph_calls": [],
+   "searches": [
+    {
+     "index": "papers",
+     "query": "City: testville\nBuilding: small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.\nWall: stucco | gypsum | insulation R=1.07 | gypsum\nPCM parameters: organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C\nGoal: minimize total annual energy"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 20.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_llm_output": "{\"pcm_interface_pos\": 4, \"pcm_tm_c\": 20.3, \"rationale\": \"synthetic rationale\"}",
+    "model": "gpt-5",
+    "retrieved_count": 5
+   }
+  },
+  "exp4_graph_rag": {
+   "llm_calls": [
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "88ae92fa9af48b0e228a7c0a9f8e54b0b56e63e6a9077c62290365b43fc2cea0",
+     "prompt_chars": 2567
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0.0,
+     "max_retries": null,
+     "prompt_sha256": "5466b5c17eca58ee0420c3c15b44a135120c2e76fa091d1521b49f0ec70856f9",
+     "prompt_chars": 1775
+    }
+   ],
+   "graph_calls": [],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "City: testville\nBuilding: small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.\nWall: stucco | gypsum | insulation R=1.07 | gypsum\nPCM parameters: organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C\nGoal: minimize total annual energy",
+     "top_k": 5
+    },
+    {
+     "index": "rules",
+     "query": "City: testville\nBuilding: small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.\nWall: stucco | gypsum | insulation R=1.07 | gypsum\nPCM parameters: organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C\nGoal: minimize total annual energy",
+     "top_k": 3
+    },
+    {
+     "index": "papers",
+     "query": "City: testville\nBuilding: small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.\nWall: stucco | gypsum | insulation R=1.07 | gypsum\nPCM parameters: organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C\nGoal: minimize total annual energy"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 20.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_llm_output": "{\"pcm_interface_pos\": 4, \"pcm_tm_c\": 20.3, \"rationale\": \"synthetic rationale\"}",
+    "model": "gpt-5",
+    "retrieved": {
+     "cases": 5,
+     "rules": 1,
+     "chunks": 3
+    }
+   }
+  },
+  "exp5_bmrag_no_kg": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "fe4b969fcd84490735e0be9b09f69c3592d813d2da4301968ec2c50b6144f540",
+     "prompt_chars": 13019
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0",
+       "cases_by_climate_row_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 22.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_pipeline": {
+     "verdict": "pass",
+     "attempts": 1,
+     "confidence": 0.5,
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ]
+    }
+   }
+  },
+  "exp7_bmrag_no_analyst": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "bca86b85ebed950156de9ee58c8dbe2375c28f98bc289b89a88411e17a4a4d11",
+     "prompt_chars": 1006
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "4db5042dc7fd688d3d13235c5e70a1d255851a2e7ec196c188a5b453b4addd6e",
+     "prompt_chars": 2265
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "365967ea3d7a756e5cf9753e6e4a325a93d9793901ef77feac2f98d5e46b3f0d",
+     "prompt_chars": 22380
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0",
+       "cases_by_climate_row_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "City: testville\nBuilding: small office, exterior wall; HVAC dual-setpoint thermostat - occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C.\nWall: stucco | gypsum | insulation R=1.07 | gypsum\nPCM: organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C\nGoal: minimize total annual energy",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "rewritten synthetic query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position testville",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "papers",
+     "query": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 22.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_pipeline": {
+     "verdict": "pass",
+     "attempts": 1,
+     "confidence": 0.5,
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ]
+    }
+   }
+  },
+  "exp8_bmrag_no_judge": {
+   "llm_calls": [
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "gpt-5-mini",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "7d805fb0b568cd215784faddb9d8aeeccecdb744afe529c610c69baa018ae14c",
+     "prompt_chars": 660
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "gpt-5",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "03bd4d4c54ed82b375a7ef2b3e42264813b8a13e1a76df95bdb5d4b48b2244ce",
+     "prompt_chars": 21964
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "rewritten synthetic query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 22.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_pipeline": {
+     "verdict": "pass",
+     "attempts": 1,
+     "confidence": 0.5,
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ]
+    }
+   }
+  },
+  "exp6_bmrag_llama": {
+   "llm_calls": [
+    {
+     "model": "meta-llama/Llama-3.1-8B-Instruct",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "cb284f0baadebae8eac3fe9de9e9b43d934fce65835ad6404ea70ef2f1b3f0a3",
+     "prompt_chars": 3507
+    },
+    {
+     "model": "meta-llama/Llama-3.1-8B-Instruct",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "7d805fb0b568cd215784faddb9d8aeeccecdb744afe529c610c69baa018ae14c",
+     "prompt_chars": 660
+    },
+    {
+     "model": "gpt-5.2",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "d3f74d01fb18c3ae055ef98cfc0e8b7b2c79bc371736af6c009eb7a6cf164c91",
+     "prompt_chars": 2204
+    },
+    {
+     "model": "meta-llama/Llama-3.1-8B-Instruct",
+     "temperature": 0,
+     "max_retries": 2,
+     "prompt_sha256": "03bd4d4c54ed82b375a7ef2b3e42264813b8a13e1a76df95bdb5d4b48b2244ce",
+     "prompt_chars": 21964
+    }
+   ],
+   "graph_calls": [
+    {
+     "cypher_sha256": "029924b23b8868d78fb36734b6ca2298a78ff45adbd08929a129f3ca8ad79a13",
+     "params": {
+      "limit": 8,
+      "climate_kw": "testville"
+     }
+    },
+    {
+     "cypher_sha256": "4e36c4cfcd8e05ca5317fc7a0cf914cd91c7bf1cd1e46ed9d59944ae4b380824",
+     "params": {
+      "climate_kw": "testville",
+      "objective_kw": "energy saving",
+      "limit": 8
+     }
+    },
+    {
+     "cypher_sha256": "697e1f7991dcd25fc929cac7a748479fb98d971ba8e095c56fb8923593d9e6e2",
+     "params": {
+      "case_ids": [
+       "case_syn_0",
+       "cases_by_climate_row_0"
+      ]
+     }
+    }
+   ],
+   "searches": [
+    {
+     "index": "cases",
+     "query": "synthetic composite query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "rewritten synthetic query",
+     "top_k": 5
+    },
+    {
+     "index": "cases",
+     "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+     "top_k": 2
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM optimal position synthetic climate query",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+     "top_k": 3
+    },
+    {
+     "index": "rules",
+     "query": "energy saving PCM placement wall layer energy reduction",
+     "top_k": 2
+    },
+    {
+     "index": "papers",
+     "query": "synthetic pcm query"
+    }
+   ],
+   "result": {
+    "prediction": {
+     "pos": 4,
+     "tm": 22.0,
+     "rationale": "synthetic rationale"
+    },
+    "raw_pipeline": {
+     "verdict": "pass",
+     "attempts": 1,
+     "confidence": 0.5,
+     "evidence_ids": [
+      "case_syn_0",
+      "rule_syn_0",
+      "abcdef0123456789__text__0001",
+      "cases_by_climate_row_0",
+      "R11"
+     ]
+    },
+    "model": "meta-llama/Llama-3.1-8B-Instruct"
+   }
+  }
+ }
+}

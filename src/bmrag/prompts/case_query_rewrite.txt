@@ -1,0 +1,15 @@
+You rewrite a building-PCM query so that it retrieves better matches from a
+research-paper knowledge base.  The original query failed to find strong
+matches — likely because the climate description was too colloquial or
+location-specific.
+
+Rewrite the query to maximize semantic recall by:
+  - replacing city names with their formal climate-zone descriptors
+    (Köppen code AND prose, e.g. "ET tundra cold dry plateau" for Lhasa)
+  - keeping any building / wall / PCM technical terms unchanged
+  - keeping it short (under 30 words)
+
+Output ONLY the rewritten query string, no explanation, no quotes.
+
+Original query: {query}
+Rewritten query:

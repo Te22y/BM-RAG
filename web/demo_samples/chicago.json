@@ -1,0 +1,506 @@
+{
+ "meta": {
+  "id": "chicago",
+  "title": "Chicago (recorded run)",
+  "zone": "continental",
+  "recorded": "20261102",
+  "source": "replay"
+ },
+ "input": {
+  "climate": "chicago",
+  "building_type": "small office, exterior wall (Perimeter_ZN_1..4, sun-exposed); HVAC dual-setpoint thermostat — occupied: cooling setpoint = 23.89°C, heating setpoint = 21.11°C; setback: cooling = 29.44°C, heating = 15.56°C. Operation schedule: WeekDays 06:00-18:00 occupied (12 h/day at cooling setpoint); nights, weekends and holidays at setback.",
+  "wall_construction": "exterior → F07 25mm stucco 25mm k=0.72 W/mK | G01 16mm gypsum board 16mm k=0.16 W/mK | Nonres_Exterior_Wall_Insulation_grd (NoMass, R=1.65 m²K/W) | G01 16mm gypsum board 16mm k=0.16 W/mK → interior",
+  "pcm_parameters": "organic PCM, latent heat=200 kJ/kg, thickness=20 mm, phase-transition band = 4°C; choose Tm from {12,14,16,18,20,22,24,26,28,30,32} °C",
+  "goal": "minimize total annual building energy (heating + cooling)",
+  "orientation": null,
+  "season": null,
+  "optimization_target": "min_total_energy"
+ },
+ "analyst": {
+  "climate_kw": "hot summer cold winter",
+  "objective_kw": "energy saving",
+  "materials": [
+   "stucco",
+   "gypsum board",
+   "insulation",
+   "pcm"
+  ],
+  "composite_query": "Chicago hot-summer cold-winter exterior wall (stucco 25mm, gypsum 16mm, NoMass insulation R=1.65, gypsum 16mm) with 20mm organic PCM (200 kJ/kg, Tm candidates 12–32°C) to minimize annual heating+cooling energy",
+  "notes": [
+   "Mapped Chicago to humid continental (Dfa) / hot-summer cold-winter for generalized climate retrieval",
+   "PCM melting temperature not fixed (candidate set provided) so pcm_tm_c set to null",
+   "Materials normalized to canonical tokens matching literature (stucco, gypsum board, insulation, pcm)",
+   "Wall layer count derived from listed layers: stucco, gypsum, insulation, gypsum = 4"
+  ]
+ },
+ "attempts": [
+  {
+   "attempt": 1,
+   "pos": 4,
+   "tm": 18.0,
+   "position": "insulation / inner-gypsum interface (PCM just behind the interior gypsum board)",
+   "confidence": 0.69,
+   "evidence_ids": [
+    "case_Harbin",
+    "0c4b2e474e2990e946d266a1a5391b92__text__0001",
+    "6c1a02ab446c7b043b049640620f1469__table__0014",
+    "3fc0212289cc39ffae6bae56c80890b2__table__0001",
+    "rule_1",
+    "case_03_pcm_config1_winter_summer"
+   ],
+   "verdict": "pass",
+   "fatal_issues": [],
+   "soft_issues": []
+  }
+ ],
+ "final": {
+  "position": "insulation / inner-gypsum interface (PCM just behind the interior gypsum board)",
+  "pcm_interface_pos": 4,
+  "pcm_tm_c": 18.0,
+  "tm_reasoning": [
+   "Chicago (Dfa) is heating-dominant annually; the office runs heating days at 21.1 °C and setback nights at 15.6 °C. At pos4 (just behind the interior gypsum), the interface temperature will swing roughly with the indoor air because only ~0.10 m²K/W separates the PCM from the room.",
+   "With a 4 °C phase band, Tm=18 °C gives [16–20 °C]. In winter weekdays the interface will be above 20 °C during occupied hours (~21.1 °C) and fall to ≤16 °C overnight (setback 15.6 °C), ensuring daily melt–freeze cycling and high latent utilization when heating loads are largest. [case_Harbin]",
+   "Coupling effectiveness: at pos4 the indoor-side resistance is ~0.10 m²K/W vs >1.7 m²K/W to the exterior, so most latent heat directly offsets space-conditioning of the room; interior-adjacent PCM yields greater indoor interaction and energy benefit. [0c4b2e474e2990e946d266a1a5391b92__text__0001]",
+   "Summer cycling is less critical for annual minimum energy in Chicago. With AC at 23.9 °C, an interior-adjacent PCM set at 18 °C will often melt by day but may not fully refreeze nightly; however, heating-season savings dominate the year.",
+   "Independent cross-check: in a severe-cold case (Harbin), the interior PCM optimum for winter was ~18 °C, near the heating setpoint but low enough to guarantee overnight solidification—consistent with this choice for a cold/mixed climate. [case_Harbin]",
+   "Material compatibility: candidate organic PCMs around 18 °C have latent heat ~200 kJ/kg, matching the task’s PCM parameterization. [3fc0212289cc39ffae6bae56c80890b2__table__0001]"
+  ],
+  "joint_rationale": "Placing the PCM at the insulation/inner-gypsum interface maximizes coupling to the room (minimal indoor-side resistance) so latent exchanges directly reduce HVAC energy. Choosing Tm=18 °C aligns the melt–freeze band with winter day/night indoor temperatures, guaranteeing daily cycling when heating loads dominate Chicago’s annual energy. This pairing optimizes the product of cycle depth and indoor-coupling, outperforming outward positions that cycle more but are insulated from the room.",
+  "confidence": 0.69,
+  "reasoning_chain": [
+   "Wall resistances from outside: stucco 25 mm (R≈0.035), outer gypsum 16 mm (R≈0.10), NoMass insulation (R=1.65), inner gypsum 16 mm (R≈0.10). Total ≈1.88 m²K/W. At pos4, indoor-side R≈0.10 while outdoor-side R>1.7, so the PCM is strongly coupled to the room (heat preferentially flows to the interior).",
+   "Chicago (Dfa) has hot summers and cold winters; the small office holds 21.1 °C (heat) and 23.9 °C (cool) in occupied hours, with setbacks to 15.6 °C (heat) and 29.4 °C (cool) off-hours. This creates large winter indoor swings at night that a near-interior PCM can exploit.",
+   "Interface envelopes by position: pos0 sees the largest swings but is thermally decoupled from the room by the whole wall; pos1/pos2 are still outside-biased; pos3 (mid-insulation) has ~symmetric coupling; pos4 closely tracks indoor air and sees the winter day (~21 °C) to night (~16 °C) swing needed for cycling.",
+   "Phase-cycling test at pos4: with Tm=18 °C (band 16–20), winter weekdays exceed 20 °C during occupied heating and drop to ~16 °C or lower at night—enabling full daily melt/solidify. Tm=20 or 22 °C would not reliably exceed their upper band edges (~22 or 24 °C) during heating days at 21.1 °C, risking under-cycling.",
+   "Effectiveness (position-coupling) criterion: interior-adjacent PCM increases interaction with indoor temperature fluctuations and yields larger energy impact than exterior placement for annual performance—reported innermost layer outperforms outermost for total energy; mechanism: proximity enhances latent utilization. [0c4b2e474e2990e946d266a1a5391b92__text__0001]",
+   "Placement guidance for cold/mixed climates indicates interior or middle layers provide better balanced or heating-favorable performance, aligning with a near-interior choice here. [6c1a02ab446c7b043b049640620f1469__table__0014]",
+   "Climate-matched winter Tm: a severe-cold case found interior PCM with Tm≈18 °C optimal for heating season—close to indoor heating setpoints but low enough to ensure night solidification—supporting Tm=18 °C at an interior-adjacent position. [case_Harbin]",
+   "Rule check (cooling-dominated external PCM): studies favoring exterior PCM target hot, cooling-dominated contexts; that mechanism does not transfer to Chicago’s heating-weighted annual objective, so exterior placements are deprioritized here. [rule_1]",
+   "PCM properties: 18–30 °C variants with latent ≈200 kJ/kg are common; selecting the 18 °C option matches the provided PCM parameter set and ensures robust winter cycling at pos4. [3fc0212289cc39ffae6bae56c80890b2__table__0001]"
+  ],
+  "evidence_ids": [
+   "case_Harbin",
+   "0c4b2e474e2990e946d266a1a5391b92__text__0001",
+   "6c1a02ab446c7b043b049640620f1469__table__0014",
+   "3fc0212289cc39ffae6bae56c80890b2__table__0001",
+   "rule_1",
+   "case_03_pcm_config1_winter_summer"
+  ],
+  "alternatives": [
+   {
+    "pcm_interface_pos": 3,
+    "pcm_tm_c": 20,
+    "why_not_preferred": "Mid-insulation (pos3) offers better cycling than pos4, but only ~50/50 coupling to indoor vs outdoor; with heating dominating in Chicago, this dilutes latent benefits compared to interior-adjacent placement. Also, Tm=20 °C risks insufficient daytime melting during heating (21.1 °C < 22 °C upper band edge). Interior/middle guidance favors interior for heating; Harbin’s winter optimum (18 °C, interior) supports a lower Tm at a more interior position.",
+    "evidence_ids": [
+     "6c1a02ab446c7b043b049640620f1469__table__0014",
+     "case_Harbin",
+     "0c4b2e474e2990e946d266a1a5391b92__text__0001"
+    ]
+   },
+   {
+    "pcm_interface_pos": 0,
+    "pcm_tm_c": 30,
+    "why_not_preferred": "Exterior placement with high Tm cycles well in summer but is largely decoupled from indoor air by the wall insulation, yielding weak annual savings and no winter benefit. External-PCM rules mainly apply to hot, cooling-dominated contexts, not Chicago’s mixed/heating-weighted profile.",
+    "evidence_ids": [
+     "rule_1"
+    ]
+   },
+   {
+    "pcm_interface_pos": 4,
+    "pcm_tm_c": 22,
+    "why_not_preferred": "At the heating setpoint (21.1 °C), Tm=22 °C (band 20–24) would often fail to reach the 24 °C upper threshold during occupied hours, limiting melt and reducing latent utilization. Evidence emphasizes matching Tm to indoor operating temperatures and ensuring full daily cycling; winter-focused interior studies favor slightly lower Tm (≈18 °C).",
+    "evidence_ids": [
+     "case_Harbin",
+     "0c4b2e474e2990e946d266a1a5391b92__text__0001"
+    ]
+   }
+  ]
+ },
+ "verdict": "pass",
+ "elapsed_seconds": 111.31,
+ "events": [
+  {
+   "t": 0.0,
+   "kind": "agent_start",
+   "agent": "analyst",
+   "attempt": 0
+  },
+  {
+   "t": 22.601,
+   "kind": "llm",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 22.599,
+   "caller": "analyst",
+   "model": "gpt-5-mini-2025-08-07",
+   "input_tokens": 933,
+   "cached_tokens": 0,
+   "output_tokens": 1753,
+   "reasoning_tokens": 1344,
+   "cost_usd": 0.00373925
+  },
+  {
+   "t": 22.601,
+   "kind": "agent_end",
+   "agent": "analyst",
+   "attempt": 0,
+   "elapsed_sec": 22.601
+  },
+  {
+   "t": 22.601,
+   "kind": "agent_start",
+   "agent": "reasoner",
+   "attempt": 1
+  },
+  {
+   "t": 29.585,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 6.676,
+   "caller": "case_query_rewrite",
+   "model": "gpt-5-mini-2025-08-07",
+   "input_tokens": 206,
+   "cached_tokens": 0,
+   "output_tokens": 458,
+   "reasoning_tokens": 384,
+   "cost_usd": 0.0009675
+  },
+  {
+   "t": 29.899,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases_with_fallback",
+   "n": 5,
+   "elapsed_sec": 7.298,
+   "fallback_used": true,
+   "query": "Chicago hot-summer cold-winter exterior wall (stucco 25mm, gypsum 16mm, NoMass insulation R=1.65, gypsum 16mm) with 20mm organic PCM (200 kJ/kg, Tm candidates 12–32°C) to minimize annual heating+cooling energy",
+   "rewritten_query": "Dfa humid continental hot-summer cold-winter exterior wall (stucco 25mm, gypsum 16mm, NoMass insulation R=1.65, gypsum 16mm) with 20mm organic PCM (200 kJ/kg, Tm 12–32°C) minimize annual heating+cooling energy",
+   "ids": [
+    "case_wall_south",
+    "case_Harbin",
+    "case_04_pcm_config2_winter_summer",
+    "case_03_pcm_config1_winter_summer",
+    "case_03_GA_optimized_single_layer_PCM_walls_and_ceilings"
+   ]
+  },
+  {
+   "t": 30.213,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_cases",
+   "n": 2,
+   "elapsed_sec": 0.314,
+   "query": "PCM placement comparison interior exterior middle wall position effective heat flux reduction parametric",
+   "ids": [
+    "case_02_placement_comparison_capric",
+    "case_01_pcm_parametric_types_thickness_positions"
+   ]
+  },
+  {
+   "t": 30.718,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.505,
+   "query": "energy saving PCM optimal position Chicago, humid continental (Köppen Dfa), hot-summer cold-winter climate, large seasonal swings, cold snowy winters and warm humid summers, high heating demand",
+   "ids": [
+    "rule_01",
+    "rule_01_oceanic_interior_favors_cooling",
+    "rule_2_pcm_melting_temp_ranges_by_climate"
+   ]
+  },
+  {
+   "t": 30.926,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 3,
+   "elapsed_sec": 0.208,
+   "query": "PCM proximity heat source interior coupling latent heat flux reduction wall position effectiveness R-C-R distribution insulation downstream",
+   "ids": [
+    "R2",
+    "rule_1_pcm_position_before_brick_reduces_heat",
+    "rule_1_pcm_adjacent_to_heat_source_reduces_peak"
+   ]
+  },
+  {
+   "t": 31.229,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_rules",
+   "n": 2,
+   "elapsed_sec": 0.303,
+   "query": "energy saving PCM placement wall layer energy reduction",
+   "ids": [
+    "rule_1_pcm_position_before_brick_reduces_heat",
+    "rule_1"
+   ]
+  },
+  {
+   "t": 31.232,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "neo4j_template",
+   "template": "cases_by_climate",
+   "n": 0,
+   "elapsed_sec": 0.003
+  },
+  {
+   "t": 39.106,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 2.86,
+   "caller": "paper_rerank",
+   "model": "gpt-5.2-2025-12-11",
+   "input_tokens": 8273,
+   "cached_tokens": 0,
+   "output_tokens": 155,
+   "reasoning_tokens": 0,
+   "cost_usd": 0.01664775
+  },
+  {
+   "t": 41.04,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 1.934,
+   "caller": "paper_rerank",
+   "model": "gpt-5.2-2025-12-11",
+   "input_tokens": 11304,
+   "cached_tokens": 0,
+   "output_tokens": 105,
+   "reasoning_tokens": 0,
+   "cost_usd": 0.021252
+  },
+  {
+   "t": 41.04,
+   "kind": "retrieval",
+   "agent": "reasoner",
+   "attempt": 1,
+   "fn": "retrieve_paper_chunks",
+   "n": 3,
+   "elapsed_sec": 9.808,
+   "query": "organic PCM, latent heat 200 kJ/kg, thickness 20 mm, phase-transition band 4°C, candidate melting temperatures {12,14,16,18,20,22,24,26,28,30,32} °C, cycling/durability",
+   "ids": [
+    "3fc0212289cc39ffae6bae56c80890b2__table__0001",
+    "6c1a02ab446c7b043b049640620f1469__table__0014",
+    "0c4b2e474e2990e946d266a1a5391b92__text__0001"
+   ]
+  },
+  {
+   "t": 111.305,
+   "kind": "llm",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 70.264,
+   "caller": "reasoner",
+   "model": "gpt-5-2025-08-07",
+   "input_tokens": 28636,
+   "cached_tokens": 0,
+   "output_tokens": 7576,
+   "reasoning_tokens": 5696,
+   "cost_usd": 0.111555
+  },
+  {
+   "t": 111.305,
+   "kind": "agent_end",
+   "agent": "reasoner",
+   "attempt": 1,
+   "elapsed_sec": 88.704,
+   "pos": 4,
+   "tm": 18.0,
+   "confidence": 0.69
+  },
+  {
+   "t": 111.305,
+   "kind": "agent_start",
+   "agent": "judge",
+   "attempt": 1
+  },
+  {
+   "t": 111.314,
+   "kind": "retrieval",
+   "agent": "judge",
+   "attempt": 1,
+   "fn": "judge.neo4j_template",
+   "template": "verify_case_evidence",
+   "n": 2,
+   "elapsed_sec": 0.008,
+   "ids": [
+    "case_03_pcm_config1_winter_summer",
+    "case_Harbin"
+   ]
+  },
+  {
+   "t": 111.314,
+   "kind": "agent_end",
+   "agent": "judge",
+   "attempt": 1,
+   "elapsed_sec": 0.008,
+   "verdict": "pass",
+   "n_fatal": 0,
+   "n_soft": 0
+  }
+ ],
+ "usage": {
+  "by_caller": {
+   "analyst": {
+    "calls": 1,
+    "input_tokens": 933,
+    "cached_tokens": 0,
+    "output_tokens": 1753,
+    "reasoning_tokens": 1344,
+    "elapsed_sec": 22.599,
+    "cost_usd": 0.00374
+   },
+   "case_query_rewrite": {
+    "calls": 1,
+    "input_tokens": 206,
+    "cached_tokens": 0,
+    "output_tokens": 458,
+    "reasoning_tokens": 384,
+    "elapsed_sec": 6.676,
+    "cost_usd": 0.00097
+   },
+   "paper_rerank": {
+    "calls": 2,
+    "input_tokens": 19577,
+    "cached_tokens": 0,
+    "output_tokens": 260,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 4.794,
+    "cost_usd": 0.0379
+   },
+   "reasoner": {
+    "calls": 1,
+    "input_tokens": 28636,
+    "cached_tokens": 0,
+    "output_tokens": 7576,
+    "reasoning_tokens": 5696,
+    "elapsed_sec": 70.264,
+    "cost_usd": 0.11156
+   }
+  },
+  "by_model": {
+   "gpt-5-mini-2025-08-07": {
+    "calls": 2,
+    "input_tokens": 1139,
+    "cached_tokens": 0,
+    "output_tokens": 2211,
+    "reasoning_tokens": 1728,
+    "elapsed_sec": 29.275,
+    "cost_usd": 0.00471
+   },
+   "gpt-5.2-2025-12-11": {
+    "calls": 2,
+    "input_tokens": 19577,
+    "cached_tokens": 0,
+    "output_tokens": 260,
+    "reasoning_tokens": 0,
+    "elapsed_sec": 4.794,
+    "cost_usd": 0.0379
+   },
+   "gpt-5-2025-08-07": {
+    "calls": 1,
+    "input_tokens": 28636,
+    "cached_tokens": 0,
+    "output_tokens": 7576,
+    "reasoning_tokens": 5696,
+    "elapsed_sec": 70.264,
+    "cost_usd": 0.11156
+   }
+  },
+  "cost_usd_total": 0.15417
+ },
+ "score": {
+  "status": "ok",
+  "pos": 4,
+  "tm": 18.0,
+  "gt_pos": 4,
+  "gt_tm": 16.0,
+  "exact_pos_hit": true,
+  "near_pos_hit": true,
+  "tm_hit_2c": true,
+  "tm_hit_4c": true,
+  "joint_strict": true,
+  "joint_loose": true,
+  "capture_loss": 0.010204081632651518
+ },
+ "truth": {
+  "gt_pos": 4,
+  "gt_tm": 16.0,
+  "tied_tm_set": [
+   16.0
+  ],
+  "savings_pct": 2.4438902743142017,
+  "baseline_kWh": 11138.888888888889,
+  "optimum_kWh": 10866.666666666668
+ },
+ "evidence": {
+  "case_Harbin": {
+   "type": "case",
+   "verified": true,
+   "paper": "Energy saving potential of a novel phase change material wallboard in typical climate regions of China",
+   "climate": "Harbin, China (45.75N, 126.63E)",
+   "favored": [
+    "external SSPCM layer for summer (cooling/heat-gain reduction) and internal SSPCM layer for winter (heating load reduction), implemented as double-layer across wall"
+   ],
+   "relation": null,
+   "text": null
+  },
+  "case_03_pcm_config1_winter_summer": {
+   "type": "case",
+   "verified": true,
+   "paper": "A numerical study of external building walls containing phase change materials (PCM)",
+   "climate": "Madrid, Spain (measured data)",
+   "favored": [],
+   "relation": null,
+   "text": null
+  },
+  "rule_1": {
+   "type": "rule",
+   "verified": true,
+   "paper": "Phase Change Materials (PCMs) and Their Optimum Position in Building Walls",
+   "climate": null,
+   "favored": [],
+   "relation": "favors",
+   "text": null
+  },
+  "0c4b2e474e2990e946d266a1a5391b92__text__0001": {
+   "type": "paper",
+   "verified": true,
+   "paper": null,
+   "climate": null,
+   "favored": [],
+   "relation": null,
+   "text": null
+  },
+  "6c1a02ab446c7b043b049640620f1469__table__0014": {
+   "type": "paper",
+   "verified": true,
+   "paper": null,
+   "climate": null,
+   "favored": [],
+   "relation": null,
+   "text": null
+  },
+  "3fc0212289cc39ffae6bae56c80890b2__table__0001": {
+   "type": "paper",
+   "verified": true,
+   "paper": null,
+   "climate": null,
+   "favored": [],
+   "relation": null,
+   "text": null
+  }
+ }
+}

@@ -1,0 +1,12 @@
+# Normalize text files to LF in the repository; working-tree line endings
+# follow the local core.autocrlf setting.
+* text=auto
+
+*.pdf     binary
+*.jpg     binary
+*.png     binary
+*.xlsx    binary
+*.sqlite3 binary
+*.pkl     binary
+*.pickle  binary
+*.bin     binary

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BM-RAG Demo</title>
+  <meta name="description" content="Multi-agent hybrid RAG that recommends where to place phase change material in a building wall.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <h1>BM-RAG</h1>
+      <p>Multi-agent RAG that decides where a phase change material belongs in a building wall, then checks the answer against EnergyPlus.</p>
+    </div>
+    <span class="badge" id="mode-badge"></span>
+  </header>
+
+  <main class="layout">
+    <aside class="side" aria-label="Scenario">
+      <div class="segmented" role="tablist" aria-label="Mode">
+        <button role="tab" id="tab-replay" aria-selected="true" aria-controls="panel-replay">Sample runs</button>
+        <button role="tab" id="tab-live" aria-selected="false" aria-controls="panel-live">Run live</button>
+      </div>
+
+      <section id="panel-replay" role="tabpanel" aria-labelledby="tab-replay">
+        <p class="hint">Runs replayed with no API key. Recorded runs are single real runs that show how the system works; samples marked synthetic use invented data. Neither is an evaluation.</p>
+        <div id="sample-list" class="sample-list"></div>
+      </section>
+
+      <section id="panel-live" role="tabpanel" aria-labelledby="tab-live" hidden>
+        <div id="live-off" class="notice" hidden>
+          <p>Live mode is off because each run spends API credit. It needs the agent environment, the knowledge-graph data and Neo4j.</p>
+          <code>.venv/Scripts/python.exe -X utf8 web/server.py --live</code>
+        </div>
+        <form id="live-form" hidden>
+          <label>Scenario
+            <select id="scenario"></select>
+          </label>
+          <label>Climate <textarea name="climate" rows="1" required></textarea></label>
+          <label>Building and HVAC <textarea name="building_type" rows="4" required></textarea></label>
+          <label>Wall construction <textarea name="wall_construction" rows="3" required></textarea></label>
+          <label>PCM parameters <textarea name="pcm_parameters" rows="3" required></textarea></label>
+          <label>Goal <textarea name="goal" rows="2" required></textarea></label>
+          <p class="hint" id="edit-note">Unedited scenarios are scored against their EnergyPlus optimum.</p>
+          <label class="check"><input type="checkbox" id="cost-ok" required> <span>I accept the cost: about US$0.15–0.40 and 2–5 minutes per run.</span></label>
+          <button type="submit" class="primary" id="run-button">Run pipeline</button>
+          <p class="error" id="live-error" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <details class="task" id="task-details" hidden>
+        <summary>Task given to the agents</summary>
+        <dl id="task-fields"></dl>
+      </details>
+    </aside>
+
+    <div class="content">
+      <section class="hero" aria-labelledby="result-title">
+        <div class="hero-head">
+          <div>
+            <p class="eyebrow" id="result-eyebrow"></p>
+            <h2 id="result-title">Loading…</h2>
+          </div>
+          <div class="hero-actions">
+            <span class="status" id="run-status" role="status"></span>
+            <button id="skip-button" class="ghost" hidden>Skip to result</button>
+            <button id="replay-button" class="ghost" hidden>Replay</button>
+          </div>
+        </div>
+        <div id="wall" class="wall"></div>
+        <div class="tm" aria-label="Melting temperature">
+          <span class="tm-label">Melting temperature (°C)</span>
+          <div id="tm-scale" class="tm-scale"></div>
+        </div>
+        <div class="legend">
+          <span><i class="key key-pred"></i>Agent recommendation</span>
+          <span><i class="key key-opt"></i>EnergyPlus optimum</span>
+        </div>
+        <dl id="stats" class="stats"></dl>
+      </section>
+
+      <section class="card" aria-labelledby="timeline-title">
+        <h3 id="timeline-title">Pipeline trace</h3>
+        <div id="timeline"></div>
+      </section>
+
+      <section class="card" id="details" hidden>
+        <div class="tabs" role="tablist" aria-label="Run details" id="detail-tabs"></div>
+        <div id="detail-body" role="tabpanel"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>Capture loss is the share of the best achievable energy savings a recommendation misses; 0 is optimal. Agent costs are estimates from list prices.</p>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

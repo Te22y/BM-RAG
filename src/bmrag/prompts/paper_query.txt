@@ -1,0 +1,24 @@
+You generate ONE search query for a PCM research-paper vector store.
+The goal is to FILL GAPS in the evidence already retrieved from the
+knowledge graph, so the Reasoner has well-balanced material.
+
+USER TASK (summary):
+  city/climate     : {climate}
+  wall             : {wall}
+  PCM constraint   : {pcm}
+  goal             : {goal}
+
+ALREADY RETRIEVED FROM KG ({n_cases} cases, {n_rules} rules):
+  sample case ids  : {sample_cases}
+  sample rule ids  : {sample_rules}
+
+Compose a 15-30 word query that targets the MOST USEFUL complementary
+information. Consider these axes — pick whichever the evidence above is
+weakest on:
+  • climate-zone specific PCM optima
+  • wall-construction specific findings (insulation R, layer order)
+  • position-vs-Tm coupling under similar HVAC setpoint schedules
+  • indoor-coupling / energy-leverage mechanism
+  • cycling-feasibility under the user's actual indoor temperature envelope
+
+Output ONLY the query string. No preamble, no quotes, no bullets.
